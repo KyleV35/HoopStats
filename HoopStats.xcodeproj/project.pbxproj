@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9A20980F16F1B0C400B9447D /* HSEditTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A20980E16F1B0C400B9447D /* HSEditTeamViewController.m */; };
 		9A20981116F1CDB600B9447D /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9A20981016F1CDB600B9447D /* README.txt */; };
+		9A20981416F27D6A00B9447D /* HSSelectOpposingTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A20981316F27D6A00B9447D /* HSSelectOpposingTeamViewController.m */; };
 		9A7088D416EF23A8004D3E62 /* HSDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7088D316EF23A8004D3E62 /* HSDatabase.m */; };
 		9A7088DE16EF2486004D3E62 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A7088DC16EF2486004D3E62 /* DataModel.xcdatamodeld */; };
 		9A70890F16EF3044004D3E62 /* Player+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A70890E16EF3044004D3E62 /* Player+Create.m */; };
@@ -79,6 +80,8 @@
 		9A20980D16F1B0C400B9447D /* HSEditTeamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSEditTeamViewController.h; sourceTree = "<group>"; };
 		9A20980E16F1B0C400B9447D /* HSEditTeamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSEditTeamViewController.m; sourceTree = "<group>"; };
 		9A20981016F1CDB600B9447D /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		9A20981216F27D6A00B9447D /* HSSelectOpposingTeamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSelectOpposingTeamViewController.h; sourceTree = "<group>"; };
+		9A20981316F27D6A00B9447D /* HSSelectOpposingTeamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSelectOpposingTeamViewController.m; sourceTree = "<group>"; };
 		9A7088D216EF23A8004D3E62 /* HSDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDatabase.h; sourceTree = "<group>"; };
 		9A7088D316EF23A8004D3E62 /* HSDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDatabase.m; sourceTree = "<group>"; };
 		9A7088DD16EF2486004D3E62 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -221,6 +224,8 @@
 				9A70893B16EF374D004D3E62 /* HSAllTeamsViewController.m */,
 				9A20980D16F1B0C400B9447D /* HSEditTeamViewController.h */,
 				9A20980E16F1B0C400B9447D /* HSEditTeamViewController.m */,
+				9A20981216F27D6A00B9447D /* HSSelectOpposingTeamViewController.h */,
+				9A20981316F27D6A00B9447D /* HSSelectOpposingTeamViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -496,6 +501,7 @@
 				9A70893F16EF3848004D3E62 /* CoreDataTableViewController.m in Sources */,
 				9A70894916EFB34D004D3E62 /* HSTeamViewController.m in Sources */,
 				9A20980F16F1B0C400B9447D /* HSEditTeamViewController.m in Sources */,
+				9A20981416F27D6A00B9447D /* HSSelectOpposingTeamViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

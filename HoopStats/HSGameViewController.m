@@ -27,6 +27,7 @@
 {
     self.recentHighlights = @[@"3pt made - 32 Spurs",@"Foul - 45 Timberwolves", @"Steal - 33 Spurs"];
     self.leftTeamLabel.text = self.leftTeam.teamName;
+    self.rightTeamLabel.text = self.rightTeam.teamName;
 }
 
 - (IBAction)playerButtonPushed:(UIButton *)sender

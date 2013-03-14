@@ -22,4 +22,13 @@
     return team;
 }
 
++(NSArray*)allTeamsInManagedObjectContext:(NSManagedObjectContext*)context
+{
+    NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"Team"];
+    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"teamName" ascending:YES];
+    request.sortDescriptors = @[sortDescriptor];
+    request.predicate = nil; // All teams
+    return [context executeFetchRequest:request error:nil];
+}
+
 @end

@@ -123,7 +123,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="doneButtonPressed" destination="I7b-HR-pu2" eventType="touchUpInside" id="Z2h-qa-vsB"/>
+                                    <segue destination="iX3-O6-fis" kind="unwind" unwindAction="editAccepted:" id="z1u-rR-hpe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eU3-eb-LUm">
@@ -141,7 +141,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cancelButtonPressed" destination="I7b-HR-pu2" eventType="touchUpInside" id="B3Y-GB-tOs"/>
+                                    <segue destination="iX3-O6-fis" kind="unwind" unwindAction="editCancelled:" id="Xh2-Hh-PJN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="e.i. Spurs, Cardinal, etc." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBz-tO-6iR">
@@ -225,8 +225,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydR-gT-pRW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="iX3-O6-fis" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="173" y="-2229"/>
+            <point key="canvasLocation" x="405" y="-1801"/>
         </scene>
         <!--Team View Controller - Team Name-->
         <scene sceneID="DJ1-Yd-DQZ">
@@ -308,7 +309,7 @@
                         <outlet property="makeGameImageView" destination="g2N-PH-8Q9" id="Prc-ef-KoC"/>
                         <outlet property="playersImageView" destination="5dc-qO-b5J" id="9ym-uh-5TJ"/>
                         <segue destination="Wz9-X9-3ZU" kind="push" identifier="createNewGame" id="z3R-dm-yJO"/>
-                        <segue destination="tNl-jb-Ezw" kind="modal" identifier="selectOpposingTeam" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="hsG-Ch-6eu"/>
+                        <segue destination="UpR-u2-T26" kind="modal" identifier="selectOpposingTeam" modalPresentationStyle="formSheet" id="9a1-pK-m5Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOV-zo-PUC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -604,43 +605,78 @@
             </objects>
             <point key="canvasLocation" x="871" y="-1053"/>
         </scene>
-        <!--All Teams View Controller-->
-        <scene sceneID="R9f-vQ-eHZ">
+        <!--Select Opposing Team View Controller-->
+        <scene sceneID="oLa-nz-dCp">
             <objects>
-                <tableViewController id="tNl-jb-Ezw" customClass="HSAllTeamsViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ztx-AO-5Am">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <viewController id="UpR-u2-T26" customClass="HSSelectOpposingTeamViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9GR-sU-0rY">
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2uO-pE-56j">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Team Cell" textLabel="Vpo-dh-Wxh" style="IBUITableViewCellStyleDefault" id="rw1-8Y-0iw">
+                                        <rect key="frame" x="0.0" y="22" width="540" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Team Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpo-dh-Wxh">
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="lv2-aF-njP" kind="unwind" unwindAction="opposingTeamSelected:" id="6Io-Tq-9oW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="UpR-u2-T26" id="YNc-0i-yUw"/>
+                                    <outlet property="delegate" destination="UpR-u2-T26" id="avs-Oc-0eb"/>
+                                </connections>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYV-gx-4Vd">
+                                <items>
+                                    <barButtonItem title="Cancel" id="JNc-B3-qyh">
+                                        <connections>
+                                            <segue destination="lv2-aF-njP" kind="unwind" unwindAction="editCancelled:" id="GFD-0U-gOH"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="5zO-9K-rCT"/>
+                                    <barButtonItem title="Select Opposing Team" style="plain" id="Jvy-Cb-jBi">
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="uPk-1m-Wsw"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WYV-gx-4Vd" firstAttribute="leading" secondItem="9GR-sU-0rY" secondAttribute="leading" type="default" id="23y-iU-Zql"/>
+                            <constraint firstItem="2uO-pE-56j" firstAttribute="bottom" secondItem="9GR-sU-0rY" secondAttribute="bottom" type="default" id="24K-fm-46l"/>
+                            <constraint firstItem="2uO-pE-56j" firstAttribute="top" secondItem="WYV-gx-4Vd" secondAttribute="bottom" type="default" id="7os-mw-CYi"/>
+                            <constraint firstItem="WYV-gx-4Vd" firstAttribute="trailing" secondItem="9GR-sU-0rY" secondAttribute="trailing" type="default" id="Naa-7a-c60"/>
+                            <constraint firstItem="2uO-pE-56j" firstAttribute="trailing" secondItem="9GR-sU-0rY" secondAttribute="trailing" type="default" id="Rj7-bL-jQ2"/>
+                            <constraint firstItem="2uO-pE-56j" firstAttribute="leading" secondItem="9GR-sU-0rY" secondAttribute="leading" type="default" id="dpH-VL-HK5"/>
+                            <constraint firstItem="WYV-gx-4Vd" firstAttribute="top" secondItem="9GR-sU-0rY" secondAttribute="top" type="default" id="zZs-Gf-snu"/>
+                        </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Team Cell" textLabel="eTw-Ta-uKQ" style="IBUITableViewCellStyleDefault" id="r1A-Lj-SCQ">
-                                <rect key="frame" x="0.0" y="22" width="1024" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Team Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTw-Ta-uKQ">
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="tNl-jb-Ezw" id="55W-I3-wDr"/>
-                            <outlet property="delegate" destination="tNl-jb-Ezw" id="jx4-Bm-nJF"/>
-                        </connections>
-                    </tableView>
+                    </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nFJ-hI-R0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <connections>
+                        <outlet property="tableView" destination="2uO-pE-56j" id="LvW-2Q-4rl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jil-DW-A2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="lv2-aF-njP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="685" y="-94"/>
+            <point key="canvasLocation" x="787" y="-38"/>
         </scene>
     </scenes>
     <classes>
@@ -650,6 +686,7 @@
         <class className="HSAllTeamsViewController" superclassName="CoreDataTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HSAllTeamsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="addButtonPressed:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="addButton" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>
@@ -665,14 +702,24 @@
         <class className="HSGameViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HSGameViewController.h"/>
             <relationships>
+                <relationship kind="action" name="playerButtonPushed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="RecentHighlightsTableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="leftTeamLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="rightTeamLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
+        <class className="HSSelectOpposingTeamViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HSSelectOpposingTeamViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
         <class className="HSTeamViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HSTeamViewController.h"/>
             <relationships>
+                <relationship kind="action" name="editAccepted:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="editCancelled:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="opposingTeamSelected:" candidateClass="UIStoryboardSegue"/>
                 <relationship kind="outlet" name="gamesImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="makeGameImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="playersImageView" candidateClass="UIImageView"/>
@@ -683,6 +730,9 @@
         </class>
         <class className="UIRefreshControl" superclassName="UIControl">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -11,5 +11,6 @@
 @interface Team (Create)
 
 +(Team*)teamWithName:(NSString*)name location:(NSString*)location inManagedObjectContext:(NSManagedObjectContext*)context;
++(NSArray*)allTeamsInManagedObjectContext:(NSManagedObjectContext*)context;
 
 @end

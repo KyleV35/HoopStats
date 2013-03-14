@@ -9,30 +9,26 @@
 #import "HSTeamViewController.h"
 #import "HSGameViewController.h"
 #import "HSEditTeamViewController.h"
+#import "HSSelectOpposingTeamViewController.h"
 
 @interface HSTeamViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *playersImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *gamesImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *makeGameImageView;
 
+@property (strong, nonatomic) Team *opposingTeam;
+
 @end
 
 @implementation HSTeamViewController
 
-- (void)viewDidLoad
+-(void)viewDidLoad
 {
     [super viewDidLoad];
-    if ([self.team.location length] == 0) {
-        self.title = self.team.teamName;
-    } else {
-        self.title = [[self.team.location stringByAppendingString:@" "] stringByAppendingString:self.team.teamName];
-    }
+    [self updateTitle];
 	[self.playersImageView setImage:[UIImage imageNamed:@"playerImage.png"]];
     [self.gamesImageView setImage:[UIImage imageNamed:@"gameImage.png"]];
     [self.makeGameImageView setImage:[UIImage imageNamed:@"createGameImage.png"]];
-    
-    [self.team addObserver:self forKeyPath:@"teamName" options:NSKeyValueObservingOptionNew context:NULL];
-    [self.team addObserver:self forKeyPath:@"location" options:NSKeyValueObservingOptionNew context:NULL];
     
     //Add Gesture Recognizers
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(playersButtonTapped)];
@@ -41,15 +37,6 @@
     [self.gamesImageView addGestureRecognizer:gamesButtonTapped];
     UITapGestureRecognizer *createGameTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(createGameButtonTapped)];
     [self.makeGameImageView addGestureRecognizer:createGameTapped];
-}
-
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    if ([self.team.location length] == 0) {
-        self.title = self.team.teamName;
-    } else {
-        self.title = [[self.team.location stringByAppendingString:@" "] stringByAppendingString:self.team.teamName];
-    }
 }
 
 -(void)playersButtonTapped
@@ -73,10 +60,48 @@
     if ([segue.identifier isEqualToString:@"createNewGame"]) {
         HSGameViewController *gameController = segue.destinationViewController;
         gameController.leftTeam = self.team;
+        gameController.rightTeam = self.opposingTeam;
     } else if ([segue.identifier isEqualToString:@"editTeam"]) {
         HSEditTeamViewController *editTeamController = segue.destinationViewController;
         editTeamController.team = self.team;
     }
 }
+
+#pragma mark Modal View Controller Unwinds
+
+-(IBAction)editCancelled:(UIStoryboardSegue*)segue
+{
+    //Do nothing
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(IBAction)editAccepted:(UIStoryboardSegue*)segue
+{
+    //Make changes to team
+    HSEditTeamViewController *modalController = segue.sourceViewController;
+    self.team.teamName = modalController.teamName;
+    self.team.location = modalController.teamLocation;
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self updateTitle];
+}
+
+-(IBAction)opposingTeamSelected:(UIStoryboardSegue*)segue
+{
+    HSSelectOpposingTeamViewController *modalController = segue.sourceViewController;
+    self.opposingTeam = modalController.selectedTeam;
+    [self dismissViewControllerAnimated:YES completion:^{
+       [self performSegueWithIdentifier:@"createNewGame" sender:self]; 
+    }];
+}
+
+-(void)updateTitle
+{
+    if ([self.team.location length] == 0) {
+        self.title = self.team.teamName;
+    } else {
+        self.title = [[self.team.location stringByAppendingString:@" "] stringByAppendingString:self.team.teamName];
+    }
+}
+
 
 @end

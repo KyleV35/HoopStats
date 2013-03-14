@@ -21,6 +21,16 @@
 
 @implementation HSEditTeamViewController
 
+-(NSString*)teamName
+{
+    return self.teamNameTextField.text;
+}
+
+-(NSString*)teamLocation
+{
+    return self.teamLocationTextField.text;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

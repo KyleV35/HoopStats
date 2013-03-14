@@ -12,5 +12,7 @@
 @interface HSEditTeamViewController : UIViewController
 
 @property (weak, nonatomic) Team *team;
+@property (nonatomic, readonly) NSString *teamName;
+@property (nonatomic, readonly) NSString *teamLocation;
 
 @end
