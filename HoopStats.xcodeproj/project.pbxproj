@@ -10,6 +10,10 @@
 		9A20980F16F1B0C400B9447D /* HSEditTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A20980E16F1B0C400B9447D /* HSEditTeamViewController.m */; };
 		9A20981116F1CDB600B9447D /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9A20981016F1CDB600B9447D /* README.txt */; };
 		9A20981416F27D6A00B9447D /* HSSelectOpposingTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A20981316F27D6A00B9447D /* HSSelectOpposingTeamViewController.m */; };
+		9A20981A16F292DF00B9447D /* HSPlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A20981916F292DF00B9447D /* HSPlayersViewController.m */; };
+		9A20981D16F29CA700B9447D /* HSEditPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A20981C16F29CA700B9447D /* HSEditPlayerViewController.m */; };
+		9A20982016F3A18700B9447D /* HSPlayerProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A20981F16F3A18600B9447D /* HSPlayerProfileViewController.m */; };
+		9A20982316F3A7E400B9447D /* GameStatLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A20982216F3A7E400B9447D /* GameStatLine.m */; };
 		9A7088D416EF23A8004D3E62 /* HSDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7088D316EF23A8004D3E62 /* HSDatabase.m */; };
 		9A7088DE16EF2486004D3E62 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A7088DC16EF2486004D3E62 /* DataModel.xcdatamodeld */; };
 		9A70890F16EF3044004D3E62 /* Player+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A70890E16EF3044004D3E62 /* Player+Create.m */; };
@@ -18,7 +22,6 @@
 		9A70892716EF3445004D3E62 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A70892616EF3445004D3E62 /* Team.m */; };
 		9A70892A16EF3445004D3E62 /* Season.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A70892916EF3445004D3E62 /* Season.m */; };
 		9A70892D16EF3446004D3E62 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A70892C16EF3445004D3E62 /* Game.m */; };
-		9A70893016EF3446004D3E62 /* GameStatLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A70892F16EF3446004D3E62 /* GameStatLine.m */; };
 		9A70893316EF3446004D3E62 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A70893216EF3446004D3E62 /* Player.m */; };
 		9A70893616EF34AD004D3E62 /* Game+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A70893516EF34AD004D3E62 /* Game+Create.m */; };
 		9A70893916EF35E9004D3E62 /* GameStatLine+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A70893816EF35E9004D3E62 /* GameStatLine+Create.m */; };
@@ -82,6 +85,14 @@
 		9A20981016F1CDB600B9447D /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		9A20981216F27D6A00B9447D /* HSSelectOpposingTeamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSelectOpposingTeamViewController.h; sourceTree = "<group>"; };
 		9A20981316F27D6A00B9447D /* HSSelectOpposingTeamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSelectOpposingTeamViewController.m; sourceTree = "<group>"; };
+		9A20981816F292DE00B9447D /* HSPlayersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSPlayersViewController.h; sourceTree = "<group>"; };
+		9A20981916F292DF00B9447D /* HSPlayersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSPlayersViewController.m; sourceTree = "<group>"; };
+		9A20981B16F29CA700B9447D /* HSEditPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSEditPlayerViewController.h; sourceTree = "<group>"; };
+		9A20981C16F29CA700B9447D /* HSEditPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSEditPlayerViewController.m; sourceTree = "<group>"; };
+		9A20981E16F3A18600B9447D /* HSPlayerProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSPlayerProfileViewController.h; sourceTree = "<group>"; };
+		9A20981F16F3A18600B9447D /* HSPlayerProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSPlayerProfileViewController.m; sourceTree = "<group>"; };
+		9A20982116F3A7E400B9447D /* GameStatLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStatLine.h; sourceTree = "<group>"; };
+		9A20982216F3A7E400B9447D /* GameStatLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStatLine.m; sourceTree = "<group>"; };
 		9A7088D216EF23A8004D3E62 /* HSDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDatabase.h; sourceTree = "<group>"; };
 		9A7088D316EF23A8004D3E62 /* HSDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDatabase.m; sourceTree = "<group>"; };
 		9A7088DD16EF2486004D3E62 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -97,8 +108,6 @@
 		9A70892916EF3445004D3E62 /* Season.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Season.m; sourceTree = "<group>"; };
 		9A70892B16EF3445004D3E62 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		9A70892C16EF3445004D3E62 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
-		9A70892E16EF3446004D3E62 /* GameStatLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStatLine.h; sourceTree = "<group>"; };
-		9A70892F16EF3446004D3E62 /* GameStatLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStatLine.m; sourceTree = "<group>"; };
 		9A70893116EF3446004D3E62 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		9A70893216EF3446004D3E62 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		9A70893416EF34AC004D3E62 /* Game+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Game+Create.h"; sourceTree = "<group>"; };
@@ -183,10 +192,10 @@
 		9A7088D516EF240C004D3E62 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9A20982116F3A7E400B9447D /* GameStatLine.h */,
+				9A20982216F3A7E400B9447D /* GameStatLine.m */,
 				9A70893116EF3446004D3E62 /* Player.h */,
 				9A70893216EF3446004D3E62 /* Player.m */,
-				9A70892E16EF3446004D3E62 /* GameStatLine.h */,
-				9A70892F16EF3446004D3E62 /* GameStatLine.m */,
 				9A70892B16EF3445004D3E62 /* Game.h */,
 				9A70892C16EF3445004D3E62 /* Game.m */,
 				9A70892816EF3445004D3E62 /* Season.h */,
@@ -226,6 +235,12 @@
 				9A20980E16F1B0C400B9447D /* HSEditTeamViewController.m */,
 				9A20981216F27D6A00B9447D /* HSSelectOpposingTeamViewController.h */,
 				9A20981316F27D6A00B9447D /* HSSelectOpposingTeamViewController.m */,
+				9A20981816F292DE00B9447D /* HSPlayersViewController.h */,
+				9A20981916F292DF00B9447D /* HSPlayersViewController.m */,
+				9A20981B16F29CA700B9447D /* HSEditPlayerViewController.h */,
+				9A20981C16F29CA700B9447D /* HSEditPlayerViewController.m */,
+				9A20981E16F3A18600B9447D /* HSPlayerProfileViewController.h */,
+				9A20981F16F3A18600B9447D /* HSPlayerProfileViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -493,7 +508,6 @@
 				9A70892716EF3445004D3E62 /* Team.m in Sources */,
 				9A70892A16EF3445004D3E62 /* Season.m in Sources */,
 				9A70892D16EF3446004D3E62 /* Game.m in Sources */,
-				9A70893016EF3446004D3E62 /* GameStatLine.m in Sources */,
 				9A70893316EF3446004D3E62 /* Player.m in Sources */,
 				9A70893616EF34AD004D3E62 /* Game+Create.m in Sources */,
 				9A70893916EF35E9004D3E62 /* GameStatLine+Create.m in Sources */,
@@ -502,6 +516,10 @@
 				9A70894916EFB34D004D3E62 /* HSTeamViewController.m in Sources */,
 				9A20980F16F1B0C400B9447D /* HSEditTeamViewController.m in Sources */,
 				9A20981416F27D6A00B9447D /* HSSelectOpposingTeamViewController.m in Sources */,
+				9A20981A16F292DF00B9447D /* HSPlayersViewController.m in Sources */,
+				9A20981D16F29CA700B9447D /* HSEditPlayerViewController.m in Sources */,
+				9A20982016F3A18700B9447D /* HSPlayerProfileViewController.m in Sources */,
+				9A20982316F3A7E400B9447D /* GameStatLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

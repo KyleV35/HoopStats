@@ -8,3 +8,4 @@
 8) Segues - Modal, Push, Unwind
 9) UINavigation Controller
 11) CALayer / Quartz
+12) Tap Gesture Recognizers

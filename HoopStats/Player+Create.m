@@ -23,4 +23,9 @@
     return player;
 }
 
+-(NSString*)description
+{
+    return [NSString stringWithFormat:@"%@ %@ - %d",self.firstName,self.lastName,self.jerseyNumber.intValue];
+}
+
 @end

@@ -8,6 +8,7 @@
 
 #import "HSGameViewController.h"
 #import "HSAddStatViewController.h"
+#import "Game+Create.h"
 
 #define NUM_RECENT_HIGHLIGHTS 3
 
@@ -18,6 +19,7 @@
 @property (strong, nonatomic) NSArray* recentHighlights;
 @property (weak, nonatomic) IBOutlet UILabel *leftTeamLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rightTeamLabel;
+@property (strong, nonatomic) Game *game;
 
 @end
 

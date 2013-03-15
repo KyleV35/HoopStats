@@ -10,6 +10,12 @@
 #import "HSGameViewController.h"
 #import "HSEditTeamViewController.h"
 #import "HSSelectOpposingTeamViewController.h"
+#import "HSPlayersViewController.h"
+
+#define SHOW_PLAYERS_SEGUE @"showPlayers"
+#define CREATE_NEW_GAME_SEGUE @"createNewGame"
+#define EDIT_TEAM_SEGUE @"editTeam"
+#define SELECT_OPPOSING_TEAM_SEGUE @"selectOpposingTeam"
 
 @interface HSTeamViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *playersImageView;
@@ -41,13 +47,12 @@
 
 -(void)playersButtonTapped
 {
-    NSLog(@"Players Button tapped");
+    [self performSegueWithIdentifier:SHOW_PLAYERS_SEGUE sender:self];
 }
 
 -(void)createGameButtonTapped
 {
-    //[self performSegueWithIdentifier:@"createNewGame" sender:nil];
-    [self performSegueWithIdentifier:@"selectOpposingTeam" sender:nil];
+    [self performSegueWithIdentifier:SELECT_OPPOSING_TEAM_SEGUE sender:nil];
 }
 
 -(void)gamesButtonTapped
@@ -57,13 +62,16 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"createNewGame"]) {
+    if ([segue.identifier isEqualToString:CREATE_NEW_GAME_SEGUE]) {
         HSGameViewController *gameController = segue.destinationViewController;
         gameController.leftTeam = self.team;
         gameController.rightTeam = self.opposingTeam;
-    } else if ([segue.identifier isEqualToString:@"editTeam"]) {
+    } else if ([segue.identifier isEqualToString:EDIT_TEAM_SEGUE]) {
         HSEditTeamViewController *editTeamController = segue.destinationViewController;
         editTeamController.team = self.team;
+    } else if ([segue.identifier isEqualToString:SHOW_PLAYERS_SEGUE]) {
+        HSPlayersViewController *playersViewController = segue.destinationViewController;
+        playersViewController.team = self.team;
     }
 }
 
@@ -90,7 +98,7 @@
     HSSelectOpposingTeamViewController *modalController = segue.sourceViewController;
     self.opposingTeam = modalController.selectedTeam;
     [self dismissViewControllerAnimated:YES completion:^{
-       [self performSegueWithIdentifier:@"createNewGame" sender:self]; 
+       [self performSegueWithIdentifier:CREATE_NEW_GAME_SEGUE sender:self];
     }];
 }
 

@@ -11,6 +11,8 @@
         <attribute name="defensiveRebounds" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="fouls" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="offensiveRebounds" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="onePointAttempted" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="onePointMade" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="steals" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="threePointsAttempted" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="threePointsMade" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -40,7 +42,7 @@
     </entity>
     <elements>
         <element name="Game" positionX="160" positionY="192" width="128" height="105"/>
-        <element name="GameStatLine" positionX="160" positionY="192" width="128" height="225"/>
+        <element name="GameStatLine" positionX="160" positionY="192" width="128" height="255"/>
         <element name="Player" positionX="160" positionY="192" width="128" height="120"/>
         <element name="Season" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Team" positionX="160" positionY="192" width="128" height="105"/>
