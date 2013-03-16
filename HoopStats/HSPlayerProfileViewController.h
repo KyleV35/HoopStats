@@ -12,5 +12,6 @@
 @interface HSPlayerProfileViewController : UIViewController
 
 @property (strong, nonatomic) Player *player;
+@property (strong, nonatomic) NSManagedObjectContext *moc;
 
 @end

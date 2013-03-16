@@ -87,6 +87,7 @@
             NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
             Player *player = [self.playersArray objectAtIndex:indexPath.row];
             playerProfileController.player = player;
+            playerProfileController.moc= self.moc;
         }
     }
 }

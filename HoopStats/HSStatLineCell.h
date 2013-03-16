@@ -9,8 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "Player.h"
 
+typedef enum {
+    HSStatLineCellTypeTotal,
+    HSStatLineCellTypeAverage
+} HSStatLineCellType;
+
 @interface HSStatLineCell : UITableViewCell
 
 @property (strong, nonatomic) Player *player;
+@property (nonatomic) HSStatLineCellType statLineCellType;
 
 @end

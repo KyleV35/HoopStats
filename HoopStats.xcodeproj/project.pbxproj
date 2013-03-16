@@ -68,6 +68,7 @@
 		9AC3AD7A16EACA2000F148CF /* turnOver.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC3AD7616EACA2000F148CF /* turnOver.png */; };
 		9AFF1D8C16F430D1004F2675 /* HSStatLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AFF1D8B16F430D1004F2675 /* HSStatLineCell.xib */; };
 		9AFF1D8F16F43414004F2675 /* HSStatLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF1D8E16F43414004F2675 /* HSStatLineCell.m */; };
+		9AFF1D9216F46B6C004F2675 /* HSPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF1D9116F46B6C004F2675 /* HSPhotoManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +164,8 @@
 		9AFF1D8B16F430D1004F2675 /* HSStatLineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HSStatLineCell.xib; sourceTree = "<group>"; };
 		9AFF1D8D16F43414004F2675 /* HSStatLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSStatLineCell.h; sourceTree = "<group>"; };
 		9AFF1D8E16F43414004F2675 /* HSStatLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSStatLineCell.m; sourceTree = "<group>"; };
+		9AFF1D9016F46B6C004F2675 /* HSPhotoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSPhotoManager.h; sourceTree = "<group>"; };
+		9AFF1D9116F46B6C004F2675 /* HSPhotoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSPhotoManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +207,8 @@
 				9A70890C16EF3008004D3E62 /* Categories */,
 				9A7088D216EF23A8004D3E62 /* HSDatabase.h */,
 				9A7088D316EF23A8004D3E62 /* HSDatabase.m */,
+				9AFF1D9016F46B6C004F2675 /* HSPhotoManager.h */,
+				9AFF1D9116F46B6C004F2675 /* HSPhotoManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -522,6 +527,7 @@
 				9A20982C16F3B96B00B9447D /* Team.m in Sources */,
 				9A20982F16F3B96C00B9447D /* GameStatLine.m in Sources */,
 				9AFF1D8F16F43414004F2675 /* HSStatLineCell.m in Sources */,
+				9AFF1D9216F46B6C004F2675 /* HSPhotoManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
