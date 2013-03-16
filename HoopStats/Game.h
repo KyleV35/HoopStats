@@ -2,21 +2,20 @@
 //  Game.h
 //  HoopStats
 //
-//  Created by Kyle Vermeer on 3/12/13.
+//  Created by Kyle Vermeer on 3/15/13.
 //  Copyright (c) 2013 Kyle Vermeer. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class GameStatLine, Season, Team;
+@class GameStatLine, Team;
 
 @interface Game : NSManagedObject
 
 @property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) NSSet *gameStatLines;
 @property (nonatomic, retain) NSSet *teams;
-@property (nonatomic, retain) Season *season;
 @end
 
 @interface Game (CoreDataGeneratedAccessors)

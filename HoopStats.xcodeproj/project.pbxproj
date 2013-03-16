@@ -13,16 +13,15 @@
 		9A20981A16F292DF00B9447D /* HSPlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A20981916F292DF00B9447D /* HSPlayersViewController.m */; };
 		9A20981D16F29CA700B9447D /* HSEditPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A20981C16F29CA700B9447D /* HSEditPlayerViewController.m */; };
 		9A20982016F3A18700B9447D /* HSPlayerProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A20981F16F3A18600B9447D /* HSPlayerProfileViewController.m */; };
-		9A20982316F3A7E400B9447D /* GameStatLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A20982216F3A7E400B9447D /* GameStatLine.m */; };
+		9A20982616F3B96A00B9447D /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A20982516F3B96A00B9447D /* Game.m */; };
+		9A20982916F3B96A00B9447D /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A20982816F3B96A00B9447D /* Player.m */; };
+		9A20982C16F3B96B00B9447D /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A20982B16F3B96B00B9447D /* Team.m */; };
+		9A20982F16F3B96C00B9447D /* GameStatLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A20982E16F3B96C00B9447D /* GameStatLine.m */; };
+		9A20983516F3E92000B9447D /* noImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A20983416F3E92000B9447D /* noImage.jpg */; };
 		9A7088D416EF23A8004D3E62 /* HSDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7088D316EF23A8004D3E62 /* HSDatabase.m */; };
 		9A7088DE16EF2486004D3E62 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A7088DC16EF2486004D3E62 /* DataModel.xcdatamodeld */; };
 		9A70890F16EF3044004D3E62 /* Player+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A70890E16EF3044004D3E62 /* Player+Create.m */; };
 		9A70892116EF3240004D3E62 /* Team+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A70892016EF3240004D3E62 /* Team+Create.m */; };
-		9A70892416EF333F004D3E62 /* Season+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A70892316EF333F004D3E62 /* Season+Create.m */; };
-		9A70892716EF3445004D3E62 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A70892616EF3445004D3E62 /* Team.m */; };
-		9A70892A16EF3445004D3E62 /* Season.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A70892916EF3445004D3E62 /* Season.m */; };
-		9A70892D16EF3446004D3E62 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A70892C16EF3445004D3E62 /* Game.m */; };
-		9A70893316EF3446004D3E62 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A70893216EF3446004D3E62 /* Player.m */; };
 		9A70893616EF34AD004D3E62 /* Game+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A70893516EF34AD004D3E62 /* Game+Create.m */; };
 		9A70893916EF35E9004D3E62 /* GameStatLine+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A70893816EF35E9004D3E62 /* GameStatLine+Create.m */; };
 		9A70893C16EF374D004D3E62 /* HSAllTeamsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A70893B16EF374D004D3E62 /* HSAllTeamsViewController.m */; };
@@ -67,6 +66,8 @@
 		9AC3AD7816EACA2000F148CF /* foul.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC3AD7416EACA2000F148CF /* foul.png */; };
 		9AC3AD7916EACA2000F148CF /* steal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC3AD7516EACA2000F148CF /* steal.png */; };
 		9AC3AD7A16EACA2000F148CF /* turnOver.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC3AD7616EACA2000F148CF /* turnOver.png */; };
+		9AFF1D8C16F430D1004F2675 /* HSStatLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AFF1D8B16F430D1004F2675 /* HSStatLineCell.xib */; };
+		9AFF1D8F16F43414004F2675 /* HSStatLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF1D8E16F43414004F2675 /* HSStatLineCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,8 +92,15 @@
 		9A20981C16F29CA700B9447D /* HSEditPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSEditPlayerViewController.m; sourceTree = "<group>"; };
 		9A20981E16F3A18600B9447D /* HSPlayerProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSPlayerProfileViewController.h; sourceTree = "<group>"; };
 		9A20981F16F3A18600B9447D /* HSPlayerProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSPlayerProfileViewController.m; sourceTree = "<group>"; };
-		9A20982116F3A7E400B9447D /* GameStatLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStatLine.h; sourceTree = "<group>"; };
-		9A20982216F3A7E400B9447D /* GameStatLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStatLine.m; sourceTree = "<group>"; };
+		9A20982416F3B96900B9447D /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		9A20982516F3B96A00B9447D /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		9A20982716F3B96A00B9447D /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		9A20982816F3B96A00B9447D /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		9A20982A16F3B96B00B9447D /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
+		9A20982B16F3B96B00B9447D /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
+		9A20982D16F3B96C00B9447D /* GameStatLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStatLine.h; sourceTree = "<group>"; };
+		9A20982E16F3B96C00B9447D /* GameStatLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStatLine.m; sourceTree = "<group>"; };
+		9A20983416F3E92000B9447D /* noImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noImage.jpg; sourceTree = "<group>"; };
 		9A7088D216EF23A8004D3E62 /* HSDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDatabase.h; sourceTree = "<group>"; };
 		9A7088D316EF23A8004D3E62 /* HSDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDatabase.m; sourceTree = "<group>"; };
 		9A7088DD16EF2486004D3E62 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -100,16 +108,6 @@
 		9A70890E16EF3044004D3E62 /* Player+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Player+Create.m"; sourceTree = "<group>"; };
 		9A70891F16EF3240004D3E62 /* Team+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Team+Create.h"; sourceTree = "<group>"; };
 		9A70892016EF3240004D3E62 /* Team+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Team+Create.m"; sourceTree = "<group>"; };
-		9A70892216EF333F004D3E62 /* Season+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Season+Create.h"; sourceTree = "<group>"; };
-		9A70892316EF333F004D3E62 /* Season+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Season+Create.m"; sourceTree = "<group>"; };
-		9A70892516EF3445004D3E62 /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
-		9A70892616EF3445004D3E62 /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
-		9A70892816EF3445004D3E62 /* Season.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Season.h; sourceTree = "<group>"; };
-		9A70892916EF3445004D3E62 /* Season.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Season.m; sourceTree = "<group>"; };
-		9A70892B16EF3445004D3E62 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
-		9A70892C16EF3445004D3E62 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
-		9A70893116EF3446004D3E62 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
-		9A70893216EF3446004D3E62 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		9A70893416EF34AC004D3E62 /* Game+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Game+Create.h"; sourceTree = "<group>"; };
 		9A70893516EF34AD004D3E62 /* Game+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Game+Create.m"; sourceTree = "<group>"; };
 		9A70893716EF35E8004D3E62 /* GameStatLine+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GameStatLine+Create.h"; sourceTree = "<group>"; };
@@ -162,6 +160,9 @@
 		9AC3AD7416EACA2000F148CF /* foul.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foul.png; sourceTree = "<group>"; };
 		9AC3AD7516EACA2000F148CF /* steal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = steal.png; sourceTree = "<group>"; };
 		9AC3AD7616EACA2000F148CF /* turnOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turnOver.png; sourceTree = "<group>"; };
+		9AFF1D8B16F430D1004F2675 /* HSStatLineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HSStatLineCell.xib; sourceTree = "<group>"; };
+		9AFF1D8D16F43414004F2675 /* HSStatLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSStatLineCell.h; sourceTree = "<group>"; };
+		9AFF1D8E16F43414004F2675 /* HSStatLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSStatLineCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,16 +193,14 @@
 		9A7088D516EF240C004D3E62 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9A20982116F3A7E400B9447D /* GameStatLine.h */,
-				9A20982216F3A7E400B9447D /* GameStatLine.m */,
-				9A70893116EF3446004D3E62 /* Player.h */,
-				9A70893216EF3446004D3E62 /* Player.m */,
-				9A70892B16EF3445004D3E62 /* Game.h */,
-				9A70892C16EF3445004D3E62 /* Game.m */,
-				9A70892816EF3445004D3E62 /* Season.h */,
-				9A70892916EF3445004D3E62 /* Season.m */,
-				9A70892516EF3445004D3E62 /* Team.h */,
-				9A70892616EF3445004D3E62 /* Team.m */,
+				9A20982D16F3B96C00B9447D /* GameStatLine.h */,
+				9A20982E16F3B96C00B9447D /* GameStatLine.m */,
+				9A20982A16F3B96B00B9447D /* Team.h */,
+				9A20982B16F3B96B00B9447D /* Team.m */,
+				9A20982716F3B96A00B9447D /* Player.h */,
+				9A20982816F3B96A00B9447D /* Player.m */,
+				9A20982416F3B96900B9447D /* Game.h */,
+				9A20982516F3B96A00B9447D /* Game.m */,
 				9A70890C16EF3008004D3E62 /* Categories */,
 				9A7088D216EF23A8004D3E62 /* HSDatabase.h */,
 				9A7088D316EF23A8004D3E62 /* HSDatabase.m */,
@@ -214,6 +213,9 @@
 			children = (
 				9AC3AD5B16E9BE7800F148CF /* HSStatButton.h */,
 				9AC3AD5C16E9BE7800F148CF /* HSStatButton.m */,
+				9AFF1D8B16F430D1004F2675 /* HSStatLineCell.xib */,
+				9AFF1D8D16F43414004F2675 /* HSStatLineCell.h */,
+				9AFF1D8E16F43414004F2675 /* HSStatLineCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -249,8 +251,6 @@
 			isa = PBXGroup;
 			children = (
 				9A70890D16EF3044004D3E62 /* Player+Create.h */,
-				9A70892216EF333F004D3E62 /* Season+Create.h */,
-				9A70892316EF333F004D3E62 /* Season+Create.m */,
 				9A70890E16EF3044004D3E62 /* Player+Create.m */,
 				9A70891F16EF3240004D3E62 /* Team+Create.h */,
 				9A70892016EF3240004D3E62 /* Team+Create.m */,
@@ -346,6 +346,7 @@
 		9AC3AD6616E9D87400F148CF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9A20983416F3E92000B9447D /* noImage.jpg */,
 				9A70895116EFEFA2004D3E62 /* createGameImage.png */,
 				9A70894E16EFEE85004D3E62 /* gameImage.png */,
 				9A70894B16EFC844004D3E62 /* playerImage.png */,
@@ -458,6 +459,8 @@
 				9A70894F16EFEE85004D3E62 /* gameImage.png in Resources */,
 				9A70895216EFEFA2004D3E62 /* createGameImage.png in Resources */,
 				9A20981116F1CDB600B9447D /* README.txt in Resources */,
+				9A20983516F3E92000B9447D /* noImage.jpg in Resources */,
+				9AFF1D8C16F430D1004F2675 /* HSStatLineCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,11 +507,6 @@
 				9A7088DE16EF2486004D3E62 /* DataModel.xcdatamodeld in Sources */,
 				9A70890F16EF3044004D3E62 /* Player+Create.m in Sources */,
 				9A70892116EF3240004D3E62 /* Team+Create.m in Sources */,
-				9A70892416EF333F004D3E62 /* Season+Create.m in Sources */,
-				9A70892716EF3445004D3E62 /* Team.m in Sources */,
-				9A70892A16EF3445004D3E62 /* Season.m in Sources */,
-				9A70892D16EF3446004D3E62 /* Game.m in Sources */,
-				9A70893316EF3446004D3E62 /* Player.m in Sources */,
 				9A70893616EF34AD004D3E62 /* Game+Create.m in Sources */,
 				9A70893916EF35E9004D3E62 /* GameStatLine+Create.m in Sources */,
 				9A70893C16EF374D004D3E62 /* HSAllTeamsViewController.m in Sources */,
@@ -519,7 +517,11 @@
 				9A20981A16F292DF00B9447D /* HSPlayersViewController.m in Sources */,
 				9A20981D16F29CA700B9447D /* HSEditPlayerViewController.m in Sources */,
 				9A20982016F3A18700B9447D /* HSPlayerProfileViewController.m in Sources */,
-				9A20982316F3A7E400B9447D /* GameStatLine.m in Sources */,
+				9A20982616F3B96A00B9447D /* Game.m in Sources */,
+				9A20982916F3B96A00B9447D /* Player.m in Sources */,
+				9A20982C16F3B96B00B9447D /* Team.m in Sources */,
+				9A20982F16F3B96C00B9447D /* GameStatLine.m in Sources */,
+				9AFF1D8F16F43414004F2675 /* HSStatLineCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

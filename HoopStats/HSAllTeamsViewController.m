@@ -9,7 +9,6 @@
 #import "HSAllTeamsViewController.h"
 #import "HSDatabase.h"
 #import "Team+Create.h"
-#import "Season+Create.h"
 #import "HSTeamViewController.h"
 
 @interface HSAllTeamsViewController ()
@@ -66,10 +65,7 @@
 
 - (IBAction)addButtonPressed:(UIBarButtonItem *)sender {
     Team* team = [Team teamWithName:@"New Team" location:@"" inManagedObjectContext:self.moc];
-    Season* season = [Season seasonWithTeam:team inManagedObjectContext:self.moc];
     [self.moc save:nil];
-    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
-    cell.editing = YES;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -80,6 +76,7 @@
         Team* team = [self.fetchedResultsController objectAtIndexPath:index];
         HSTeamViewController *teamViewController = segue.destinationViewController;
         teamViewController.team = team;
+        teamViewController.moc = self.moc;
     }
 }
 

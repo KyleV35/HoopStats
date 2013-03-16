@@ -66,6 +66,7 @@
         HSGameViewController *gameController = segue.destinationViewController;
         gameController.leftTeam = self.team;
         gameController.rightTeam = self.opposingTeam;
+        gameController.moc = self.moc;
     } else if ([segue.identifier isEqualToString:EDIT_TEAM_SEGUE]) {
         HSEditTeamViewController *editTeamController = segue.destinationViewController;
         editTeamController.team = self.team;

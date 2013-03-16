@@ -1,21 +1,16 @@
 //
-//  Team.m
+//  HSStatLineCell.h
 //  HoopStats
 //
 //  Created by Kyle Vermeer on 3/15/13.
 //  Copyright (c) 2013 Kyle Vermeer. All rights reserved.
 //
 
-#import "Team.h"
-#import "Game.h"
+#import <UIKit/UIKit.h>
 #import "Player.h"
 
+@interface HSStatLineCell : UITableViewCell
 
-@implementation Team
-
-@dynamic location;
-@dynamic teamName;
-@dynamic games;
-@dynamic players;
+@property (strong, nonatomic) Player *player;
 
 @end

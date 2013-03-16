@@ -7,22 +7,31 @@
 //
 
 #import "Game+Create.h"
-#import "Season.h"
+#import "GameStatLine+Create.h"
 #import "Team.h"
 
 @implementation Game (Create)
 
-+(Game*)gameWithSeason:(Season*)season againstTeam:(Team*)opponent inManagedObjectContext:(NSManagedObjectContext*)context
++(Game*)gameWithTeam:(Team*)team againstOpponent:(Team*)opponent inManagedObjectContext:(NSManagedObjectContext*)context
 {
     Game *game = nil;
     if (!game) {
         //Create Game
         game = [NSEntityDescription insertNewObjectForEntityForName:@"Game" inManagedObjectContext:context];
-        game.season = season;
-        game.teams = [NSSet setWithObjects:season.team,opponent, nil];
+        game.teams = [NSSet setWithObjects:team,opponent, nil];
         game.date = [NSDate date];
+        [game createStatLinesInManagedObjectContext:context];
     }
     return game;
+}
+
+-(void)createStatLinesInManagedObjectContext:(NSManagedObjectContext*)context;
+{
+    for (Team *team in self.teams) {
+        for (Player *player in team.players) {
+            [GameStatLine gameStatLineWithPlayer:player inGame:self inManagedObjectContext:context];
+        }
+    }
 }
 
 @end

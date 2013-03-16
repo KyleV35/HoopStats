@@ -10,7 +10,6 @@
 #import "HSEditPlayerViewController.h"
 #import "HSPlayerProfileViewController.h"
 #import "HSDatabase.h"
-#import "Season.h"
 #import "Player+Create.h"
 
 @interface HSPlayersViewController ()
@@ -33,8 +32,7 @@
 -(void)setTeam:(Team *)team
 {
     _team = team;
-    Season *currentSeason = [[team.seasons allObjects] lastObject];
-    self.playersArray = [currentSeason.players allObjects];
+    self.playersArray = [team.players allObjects];
 }
 
 #pragma mark - Table view data source
@@ -73,10 +71,9 @@
     NSString *lastName = editPlayerController.playerLastName;
     NSNumber *number = editPlayerController.playerNumber;
     Player *newPlayer = [Player playerWithFirstName:firstName lastName:lastName number:number inManagedObjectContext:self.moc];
-    Season *currentSeason = [[self.team.seasons allObjects] lastObject];
-    [currentSeason addPlayersObject:newPlayer];
+    [self.team addPlayersObject:newPlayer];
     //Refresh playersData
-    self.playersArray = [currentSeason.players allObjects];
+    self.playersArray = [self.team.players allObjects];
     [self.tableView reloadData];
     [self dismissViewControllerAnimated:YES completion:nil];
 }

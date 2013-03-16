@@ -2,13 +2,12 @@
 //  Game.m
 //  HoopStats
 //
-//  Created by Kyle Vermeer on 3/12/13.
+//  Created by Kyle Vermeer on 3/15/13.
 //  Copyright (c) 2013 Kyle Vermeer. All rights reserved.
 //
 
 #import "Game.h"
 #import "GameStatLine.h"
-#import "Season.h"
 #import "Team.h"
 
 
@@ -17,6 +16,5 @@
 @dynamic date;
 @dynamic gameStatLines;
 @dynamic teams;
-@dynamic season;
 
 @end

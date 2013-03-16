@@ -23,6 +23,8 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tapRecognizer];
 	// Do any additional setup after loading the view.
 }
 
@@ -49,5 +51,15 @@
     NSString *numberString = self.playerNumberTextField.text;
     return @(numberString.intValue);
 }
+
+- (BOOL)disablesAutomaticKeyboardDismissal
+{
+    return NO;
+}
+
+-(void)dismissKeyboard {
+    [self.view endEditing:YES];
+}
+
 
 @end

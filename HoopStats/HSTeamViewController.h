@@ -13,4 +13,6 @@
 
 @property (strong, nonatomic) Team *team;
 
+@property (strong, nonatomic) NSManagedObjectContext *moc;
+
 @end

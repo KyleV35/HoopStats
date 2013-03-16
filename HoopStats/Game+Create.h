@@ -10,6 +10,6 @@
 
 @interface Game (Create)
 
-+(Game*)gameWithSeason:(Season*)season againstTeam:(Team*)opponent inManagedObjectContext:(NSManagedObjectContext*)context;
++(Game*)gameWithTeam:(Team*)team againstOpponent:(Team*)opponent inManagedObjectContext:(NSManagedObjectContext*)context;
 
 @end
