@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rightTeamLabel;
 @property (weak, nonatomic) IBOutlet UITableView *statsTableView;
+@property (weak, nonatomic) IBOutlet UILabel *leftTeamScoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rightTeamScoreLabel;
 
 @property (strong, nonatomic) Team *leftTeam;
 @property (strong, nonatomic) Team *rightTeam;
@@ -81,6 +83,7 @@
     [self.teamSelectorControl setTitle:self.rightTeam.teamName forSegmentAtIndex:1];
     [self.statsTableView registerNib:[UINib nibWithNibName:@"HSStatLineCell" bundle:nil] forCellReuseIdentifier:@"StatLineCell"];
     self.titleLabel.text = [self.leftTeam.teamName stringByAppendingString:@"'s Game Stats"];
+    [self displayScore];
 }
 
 #pragma mark UITableViewDataSource
@@ -149,6 +152,25 @@
     [self.statsTableView reloadData];
     Team *currentTeam = sender.selectedSegmentIndex == 0 ? self.leftTeam : self.rightTeam;
     self.titleLabel.text = [currentTeam.teamName stringByAppendingString:@"'s Game Stats"];
+}
+
+-(void)displayScore
+{
+    int leftTeamScore = 0;
+    int rightTeamScore = 0;
+    for (GameStatLine* statLine in [self.game.gameStatLines allObjects])
+    {
+        int pointsForPlayer = statLine.twoPointsMade.intValue*2 + statLine.threePointsMade.intValue*3 + statLine.onePointMade.intValue;
+        if ([self.leftTeamPlayers containsObject:statLine.player]) {
+            leftTeamScore += pointsForPlayer;
+        } else if ([self.rightTeamPlayers containsObject:statLine.player]) {
+            rightTeamScore += pointsForPlayer;
+        } else {
+            NSLog(@"Player is on neither team... We might wanna check that out");
+        }
+    }
+    self.leftTeamScoreLabel.text = @(leftTeamScore).stringValue;
+    self.rightTeamScoreLabel.text = @(rightTeamScore).stringValue;
 }
 
 @end

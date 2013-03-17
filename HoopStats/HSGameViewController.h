@@ -11,8 +11,7 @@
 
 @interface HSGameViewController : UIViewController
 
-@property (strong, nonatomic) Team *leftTeam;
-@property (strong, nonatomic) Team *rightTeam;
 @property (strong, nonatomic) NSManagedObjectContext *moc;
+@property (strong, nonatomic) Game *game;
 
 @end

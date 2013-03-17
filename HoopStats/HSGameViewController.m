@@ -16,14 +16,17 @@
 
 @interface HSGameViewController () <UITableViewDelegate, UITableViewDataSource, AddStatDelegate>
 
+@property (strong, nonatomic) Team *leftTeam;
+@property (strong, nonatomic) Team *rightTeam;
 @property (strong, nonatomic) UIPopoverController *popover;
 @property (weak, nonatomic) IBOutlet UITableView *RecentHighlightsTableView;
 @property (strong, nonatomic) NSArray* recentHighlights;
 @property (weak, nonatomic) IBOutlet UILabel *leftTeamLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rightTeamLabel;
-@property (strong, nonatomic) Game *game;
 @property (strong, nonatomic) NSArray *leftTeamPlayers;
 @property (strong, nonatomic) NSArray *rightTeamPlayers;
+@property (weak, nonatomic) IBOutlet UILabel *leftTeamScoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rightTeamScoreLabel;
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *leftTeamButtons;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *rightTeamButtons;
@@ -32,15 +35,17 @@
 
 @implementation HSGameViewController
 
+
+
 -(void)viewDidLoad
 {
-    self.game = [Game gameWithTeam:self.leftTeam againstOpponent:self.rightTeam inManagedObjectContext:self.moc];
     self.recentHighlights = @[@"3pt made - 32 Spurs",@"Foul - 45 Timberwolves", @"Steal - 33 Spurs"];
     self.leftTeamLabel.text = self.leftTeam.teamName;
     self.rightTeamLabel.text = self.rightTeam.teamName;
     [self setUpPlayers];
     [self setUpButtons:self.leftTeamButtons playerArray:self.leftTeamPlayers];
     [self setUpButtons:self.rightTeamButtons playerArray:self.rightTeamPlayers];
+    [self displayScore];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -100,6 +105,7 @@
     statLine.twoPointsMade= @(statLine.twoPointsMade.integerValue+1);
     [self.popover dismissPopoverAnimated:YES];
     self.popover = nil;
+    [self displayScore];
 }
 -(void)twoPointMissed:(Player*)player
 {
@@ -115,6 +121,7 @@
     statLine.threePointsMade= @(statLine.threePointsMade.integerValue+1);
     [self.popover dismissPopoverAnimated:YES];
     self.popover = nil;
+    [self displayScore];
 }
 -(void)threePointMissed:(Player*)player
 {
@@ -130,6 +137,7 @@
     statLine.onePointMade= @(statLine.onePointMade.integerValue+1);
     [self.popover dismissPopoverAnimated:YES];
     self.popover = nil;
+    [self displayScore];
 }
 -(void)onePointMissed:(Player*)player
 {
@@ -226,6 +234,25 @@
         Player *player = [playerArray objectAtIndex:index];
         [playerButton setTitle:player.jerseyNumber.stringValue forState:UIControlStateNormal];
     }
+}
+
+-(void)displayScore
+{
+    int leftTeamScore = 0;
+    int rightTeamScore = 0;
+    for (GameStatLine* statLine in [self.game.gameStatLines allObjects])
+    {
+        int pointsForPlayer = statLine.twoPointsMade.intValue*2 + statLine.threePointsMade.intValue*3 + statLine.onePointMade.intValue;
+        if ([self.leftTeamPlayers containsObject:statLine.player]) {
+            leftTeamScore += pointsForPlayer;
+        } else if ([self.rightTeamPlayers containsObject:statLine.player]) {
+            rightTeamScore += pointsForPlayer;
+        } else {
+            NSLog(@"Player is on neither team... We might wanna check that out");
+        }
+    }
+    self.leftTeamScoreLabel.text = @(leftTeamScore).stringValue;
+    self.rightTeamScoreLabel.text = @(rightTeamScore).stringValue;
 }
 
 @end
