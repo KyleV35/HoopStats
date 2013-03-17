@@ -8,6 +8,10 @@
 
 #import "HSGameListViewController.h"
 #import "Game+Create.h"
+#import "HSReviewGameViewController.h"
+
+#define GAME_SELECTED_SEGUE @"gameSelected"
+#define GAME_CELL @"Game Cell"
 
 @interface HSGameListViewController ()
 
@@ -51,12 +55,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Game Cell";
+    static NSString *CellIdentifier = GAME_CELL;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     Game *game = [self.gamesArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [game description];
     
     return cell;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:GAME_SELECTED_SEGUE]) {
+        HSReviewGameViewController *gameReviewController = segue.destinationViewController;
+        if ([sender isKindOfClass:[UITableViewCell class]]) {
+            UITableViewCell *cell = sender;
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+            gameReviewController.game = [self.gamesArray objectAtIndex:indexPath.row];
+        }
+    }
 }
 
 #pragma mark - Table view delegate

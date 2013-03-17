@@ -9,3 +9,5 @@
 9) UINavigation Controller
 11) CALayer / Quartz
 12) Tap Gesture Recognizers
+13) UISegmentedControler
+14) Custome UITableViewCell

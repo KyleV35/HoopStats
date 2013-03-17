@@ -22,6 +22,20 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableViewTotal;
 @property (weak, nonatomic) IBOutlet UITableView *tableViewAverage;
 
+@property (nonatomic) NSNumber *fieldGoalsAttempted;
+@property (nonatomic) NSNumber *fieldGoalsMade;
+@property (nonatomic) NSNumber *threePointsMade;
+@property (nonatomic) NSNumber *threePointsAttempted;
+@property (nonatomic) NSNumber *freeThrowsMade;
+@property (nonatomic) NSNumber *freeThrowsAttempted;
+@property (nonatomic) NSNumber *offensiveRebounds;
+@property (nonatomic) NSNumber *defensiveRebounds;
+@property (nonatomic) NSNumber *assists;
+@property (nonatomic) NSNumber *steals;
+@property (nonatomic) NSNumber *personalFouls;
+@property (nonatomic) NSNumber *turnovers;
+@property (nonatomic) NSNumber *gamesPlayed;
+
 @end
 
 @implementation HSPlayerProfileViewController
@@ -35,6 +49,7 @@
 {
     [super viewDidLoad];
     [self refreshDisplay];
+    [self calculateTotals];
     [self.tableViewTotal registerNib:[UINib nibWithNibName:@"HSStatLineCell" bundle:nil] forCellReuseIdentifier:@"StatLineCell"];
     [self.tableViewAverage registerNib:[UINib nibWithNibName:@"HSStatLineCell" bundle:nil] forCellReuseIdentifier:@"StatLineCell"];
 }
@@ -49,7 +64,8 @@
         } else {
             cell.statLineCellType = HSStatLineCellTypeAverage;
         }
-        cell.player = self.player;
+        [self populateCell:cell];
+        [cell updateDisplay];
     }
     
     return cell;
@@ -108,7 +124,6 @@
     HSPhotoManager* photoManager = [HSPhotoManager sharedInstance];
     Player* player = self.player;
     dispatch_queue_t photoQueue = dispatch_queue_create("Photo Retrieval", NULL);
-    //[self.spinner startAnimating];
     dispatch_async(photoQueue, ^{
         NSData *imageData= [photoManager dataForPhotoInStorageForPlayer:self.player];
         UIImage *image = nil;
@@ -116,14 +131,12 @@
             // No photo for player
             image= [UIImage imageNamed:@"noImage.jpg"];
         } else {
-            // Photo was cached, read from disk
+            // There is a photo for the player
             imageData = [photoManager dataForPhotoInStorageForPlayer:self.player];
             image = [[UIImage alloc] initWithData:imageData];
         }
-        
         //Check to make sure the user is still waiting for the image to download
         if (player == self.player) {
-            
             // Dispatch to main thread to do UIKit work
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (image) {
@@ -131,7 +144,6 @@
                     // Maybe adjust size
                     //self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
                 }
-                //[self.spinner stopAnimating];
             });
         }
     });
@@ -156,7 +168,67 @@
             }
         });
     });
+}
 
+-(void)calculateTotals
+{
+    int fieldGoalsAttempted = 0;
+    int fieldGoalsMade = 0;
+    int threePointsMade = 0;
+    int threePointsAttempted = 0;
+    int freeThrowsMade = 0;
+    int freeThrowsAttempted = 0;
+    int offensiveRebounds = 0;
+    int defensiveRebounds = 0;
+    int assists = 0;
+    int steals = 0;
+    int personalFouls = 0;
+    int turnovers = 0;
+    int gamesPlayed = [self.player.gameStatLines count];
+    for (GameStatLine *statLine in self.player.gameStatLines) {
+        fieldGoalsAttempted += statLine.twoPointsAttempted.intValue + statLine.threePointsAttempted.intValue;
+        fieldGoalsMade += statLine.twoPointsMade.intValue + statLine.threePointsMade.intValue;
+        threePointsMade += statLine.threePointsMade.intValue;
+        threePointsAttempted += statLine.threePointsAttempted.intValue;
+        freeThrowsMade += statLine.onePointMade.intValue;
+        freeThrowsAttempted += statLine.onePointAttempted.intValue;
+        offensiveRebounds  += statLine.offensiveRebounds.intValue;
+        defensiveRebounds += statLine.defensiveRebounds.intValue;
+        assists += statLine.assists.intValue;
+        steals += statLine.steals.intValue;
+        personalFouls += statLine.fouls.intValue;
+        turnovers += statLine.turnovers.intValue;
+    }
+    self.fieldGoalsAttempted = @(fieldGoalsAttempted);
+    self.fieldGoalsMade = @(fieldGoalsMade);
+    self.threePointsAttempted = @(threePointsAttempted);
+    self.threePointsMade = @(threePointsMade);
+    self.freeThrowsAttempted = @(threePointsAttempted);
+    self.freeThrowsMade = @(threePointsMade);
+    self.offensiveRebounds = @(offensiveRebounds);
+    self.defensiveRebounds = @(defensiveRebounds);
+    self.assists = @(assists);
+    self.steals = @(steals);
+    self.personalFouls = @(personalFouls);
+    self.turnovers = @(turnovers);
+    self.gamesPlayed = @(gamesPlayed);
+}
+
+-(void)populateCell:(HSStatLineCell*)cell
+{
+    cell.fieldGoalsAttempted = self.fieldGoalsAttempted;
+    cell.fieldGoalsMade = self.fieldGoalsMade;
+    cell.threePointersAttempted = self.threePointsAttempted;
+    cell.threePointersMade = self.threePointsMade;
+    cell.freeThrowsAttempted = self.freeThrowsAttempted;
+    cell.freeThrowsMade = self.freeThrowsMade;
+    cell.offensiveRebounds = self.offensiveRebounds;
+    cell.defensiveRebounds = self.defensiveRebounds;
+    cell.assists = self.assists;
+    cell.steals = self.steals;
+    cell.personalFouls = self.personalFouls;
+    cell.turnovers = self.turnovers;
+    cell.gamesPlayed = self.gamesPlayed;
 }
 
 

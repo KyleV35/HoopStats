@@ -70,6 +70,7 @@
 		9AFF1DC216F546AB004F2675 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF1DC116F546AB004F2675 /* Player.m */; };
 		9AFF1DC516F546AC004F2675 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF1DC416F546AC004F2675 /* Team.m */; };
 		9AFF1DC816F546AC004F2675 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF1DC716F546AC004F2675 /* Game.m */; };
+		9AFF1DCB16F58C13004F2675 /* HSReviewGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF1DCA16F58C13004F2675 /* HSReviewGameViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +170,8 @@
 		9AFF1DC416F546AC004F2675 /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
 		9AFF1DC616F546AC004F2675 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		9AFF1DC716F546AC004F2675 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		9AFF1DC916F58C12004F2675 /* HSReviewGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSReviewGameViewController.h; sourceTree = "<group>"; };
+		9AFF1DCA16F58C13004F2675 /* HSReviewGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSReviewGameViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +256,8 @@
 				9A20981C16F29CA700B9447D /* HSEditPlayerViewController.m */,
 				9A20981E16F3A18600B9447D /* HSPlayerProfileViewController.h */,
 				9A20981F16F3A18600B9447D /* HSPlayerProfileViewController.m */,
+				9AFF1DC916F58C12004F2675 /* HSReviewGameViewController.h */,
+				9AFF1DCA16F58C13004F2675 /* HSReviewGameViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -534,6 +539,7 @@
 				9AFF1DC216F546AB004F2675 /* Player.m in Sources */,
 				9AFF1DC516F546AC004F2675 /* Team.m in Sources */,
 				9AFF1DC816F546AC004F2675 /* Game.m in Sources */,
+				9AFF1DCB16F58C13004F2675 /* HSReviewGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

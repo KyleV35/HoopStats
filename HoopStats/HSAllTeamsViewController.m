@@ -82,7 +82,7 @@
 
 -(void)refresh
 {
-    
+    [self.refreshControl endRefreshing];
 }
 
 @end
