@@ -11,11 +11,13 @@
 #import "HSEditTeamViewController.h"
 #import "HSSelectOpposingTeamViewController.h"
 #import "HSPlayersViewController.h"
+#import "HSGameListViewController.h"
 
 #define SHOW_PLAYERS_SEGUE @"showPlayers"
 #define CREATE_NEW_GAME_SEGUE @"createNewGame"
 #define EDIT_TEAM_SEGUE @"editTeam"
 #define SELECT_OPPOSING_TEAM_SEGUE @"selectOpposingTeam"
+#define SHOW_GAMES_SEGUE @"showGames"
 
 @interface HSTeamViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *playersImageView;
@@ -57,7 +59,7 @@
 
 -(void)gamesButtonTapped
 {
-    NSLog(@"Games Button tapped");
+    [self performSegueWithIdentifier:SHOW_GAMES_SEGUE sender:nil];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -73,6 +75,9 @@
     } else if ([segue.identifier isEqualToString:SHOW_PLAYERS_SEGUE]) {
         HSPlayersViewController *playersViewController = segue.destinationViewController;
         playersViewController.team = self.team;
+    } else if ([segue.identifier isEqualToString:SHOW_GAMES_SEGUE]) {
+        HSGameListViewController *gameListController = segue.destinationViewController;
+        gameListController.team = self.team;
     }
 }
 

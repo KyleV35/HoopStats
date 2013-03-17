@@ -8,7 +8,7 @@
 
 #import "Game+Create.h"
 #import "GameStatLine+Create.h"
-#import "Team.h"
+#import "Team+Create.h"
 
 @implementation Game (Create)
 
@@ -32,6 +32,19 @@
             [GameStatLine gameStatLineWithPlayer:player inGame:self inManagedObjectContext:context];
         }
     }
+}
+
+-(NSString*)description
+{
+    NSArray *teamsArray = [self.teams allObjects];
+    return [NSString stringWithFormat:@"%@ vs %@ - %@",teamsArray[0],teamsArray[1],[self formattedDate]];
+}
+
+-(NSString*)formattedDate
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"MM/dd/yyyy";
+    return [dateFormatter stringFromDate:self.date];
 }
 
 @end

@@ -2,7 +2,7 @@
 //  Team.h
 //  HoopStats
 //
-//  Created by Kyle Vermeer on 3/15/13.
+//  Created by Kyle Vermeer on 3/16/13.
 //  Copyright (c) 2013 Kyle Vermeer. All rights reserved.
 //
 
@@ -15,11 +15,16 @@
 
 @property (nonatomic, retain) NSString * location;
 @property (nonatomic, retain) NSString * teamName;
-@property (nonatomic, retain) Game *games;
+@property (nonatomic, retain) NSSet *games;
 @property (nonatomic, retain) NSSet *players;
 @end
 
 @interface Team (CoreDataGeneratedAccessors)
+
+- (void)addGamesObject:(Game *)value;
+- (void)removeGamesObject:(Game *)value;
+- (void)addGames:(NSSet *)values;
+- (void)removeGames:(NSSet *)values;
 
 - (void)addPlayersObject:(Player *)value;
 - (void)removePlayersObject:(Player *)value;

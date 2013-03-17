@@ -23,8 +23,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *rightTeamLabel;
 @property (strong, nonatomic) Game *game;
 @property (strong, nonatomic) NSArray *leftTeamPlayers;
+@property (strong, nonatomic) NSArray *rightTeamPlayers;
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *leftTeamButtons;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *rightTeamButtons;
 
 @end
 
@@ -36,22 +38,9 @@
     self.recentHighlights = @[@"3pt made - 32 Spurs",@"Foul - 45 Timberwolves", @"Steal - 33 Spurs"];
     self.leftTeamLabel.text = self.leftTeam.teamName;
     self.rightTeamLabel.text = self.rightTeam.teamName;
-    self.leftTeamPlayers = [[self.leftTeam.players allObjects] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        Player *firstPlayer = (Player*)obj1;
-        Player *secondPlayer = (Player*)obj2;
-        if (firstPlayer.jerseyNumber > secondPlayer.jerseyNumber) {
-            return NSOrderedDescending;
-        } else if (firstPlayer.jerseyNumber < secondPlayer.jerseyNumber) {
-            return NSOrderedAscending;
-        } else {
-            return NSOrderedSame;
-        }
-    }];
-    for (UIButton* playerButton in self.leftTeamButtons) {
-        NSUInteger index = [self.leftTeamButtons indexOfObject:playerButton];
-        Player *player = [self.leftTeamPlayers objectAtIndex:index];
-        [playerButton setTitle:player.jerseyNumber.stringValue forState:UIControlStateNormal];
-    }
+    [self setUpPlayers];
+    [self setUpButtons:self.leftTeamButtons playerArray:self.leftTeamPlayers];
+    [self setUpButtons:self.rightTeamButtons playerArray:self.rightTeamPlayers];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -64,8 +53,11 @@
 {
     Player* player = nil;
     if ([self.leftTeamButtons containsObject:sender]) {
-        NSLog(@"A left team button was hit");
-        player = [self leftPlayerForNumber:sender.titleLabel.text.integerValue];
+        player = [self playerForNumber:sender.titleLabel.text.integerValue fromPlayers:self.leftTeamPlayers];
+    } else if ([self.rightTeamButtons containsObject:sender]) {
+        player = [self playerForNumber:sender.titleLabel.text.integerValue fromPlayers:self.rightTeamPlayers];
+    } else {
+        NSLog(@"Button is for neither left nor right");
     }
     NSLog(player.description);
     HSAddStatViewController *statPopoverController = [[HSAddStatViewController alloc] initWithPlayer:player];
@@ -89,9 +81,9 @@
     return NUM_RECENT_HIGHLIGHTS;
 }
 
--(Player*)leftPlayerForNumber:(NSUInteger)number
+-(Player*)playerForNumber:(NSUInteger)number fromPlayers:(NSArray*)players
 {
-    for (Player* player in self.leftTeamPlayers) {
+    for (Player* player in players) {
         if (player.jerseyNumber.integerValue == number) {
             return player;
         }
@@ -197,6 +189,43 @@
         }
     }
     return nil;
+}
+
+-(void)setUpPlayers
+{
+    self.leftTeamPlayers = [[self.leftTeam.players allObjects] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        Player *firstPlayer = (Player*)obj1;
+        Player *secondPlayer = (Player*)obj2;
+        if (firstPlayer.jerseyNumber > secondPlayer.jerseyNumber) {
+            return NSOrderedDescending;
+        } else if (firstPlayer.jerseyNumber < secondPlayer.jerseyNumber) {
+            return NSOrderedAscending;
+        } else {
+            return NSOrderedSame;
+        }
+    }];
+    
+    
+    self.rightTeamPlayers = [[self.rightTeam.players allObjects] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        Player *firstPlayer = (Player*)obj1;
+        Player *secondPlayer = (Player*)obj2;
+        if (firstPlayer.jerseyNumber > secondPlayer.jerseyNumber) {
+            return NSOrderedDescending;
+        } else if (firstPlayer.jerseyNumber < secondPlayer.jerseyNumber) {
+            return NSOrderedAscending;
+        } else {
+            return NSOrderedSame;
+        }
+    }];    
+}
+
+-(void)setUpButtons:(NSArray*)buttonArray playerArray:(NSArray*)playerArray
+{
+    for (UIButton* playerButton in buttonArray) {
+        NSUInteger index = [buttonArray indexOfObject:playerButton];
+        Player *player = [playerArray objectAtIndex:index];
+        [playerButton setTitle:player.jerseyNumber.stringValue forState:UIControlStateNormal];
+    }
 }
 
 @end

@@ -206,13 +206,13 @@
                         <rect key="frame" x="0.0" y="64" width="1024" height="660"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" id="5dc-qO-b5J">
+                            <imageView contentMode="scaleToFill" image="playerImage.png" id="5dc-qO-b5J">
                                 <rect key="frame" x="12" y="167" width="325" height="325"/>
                             </imageView>
-                            <imageView contentMode="scaleToFill" id="kWU-Lt-kWm">
+                            <imageView contentMode="scaleToFill" image="gameImage.png" id="kWU-Lt-kWm">
                                 <rect key="frame" x="349" y="167" width="326" height="325"/>
                             </imageView>
-                            <imageView contentMode="scaleToFill" id="g2N-PH-8Q9">
+                            <imageView contentMode="scaleToFill" image="createGameImage.png" id="g2N-PH-8Q9">
                                 <rect key="frame" x="683" y="168" width="325" height="325"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Players" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rbg-Hi-hN9">
@@ -253,6 +253,7 @@
                         <segue destination="Wz9-X9-3ZU" kind="push" identifier="createNewGame" id="z3R-dm-yJO"/>
                         <segue destination="UpR-u2-T26" kind="modal" identifier="selectOpposingTeam" modalPresentationStyle="formSheet" id="9a1-pK-m5Y"/>
                         <segue destination="XcW-9B-cgo" kind="push" identifier="showPlayers" id="tGa-n7-RmA"/>
+                        <segue destination="zkc-Qs-Cgp" kind="push" identifier="showGames" id="5cx-Ck-39F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOV-zo-PUC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -617,6 +618,166 @@
             </objects>
             <point key="canvasLocation" x="2211" y="-1648"/>
         </scene>
+        <!--View Controller - Game-->
+        <scene sceneID="2pk-Bv-uMi">
+            <objects>
+                <viewController id="qhn-ag-afo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2lc-Iu-Htn">
+                        <rect key="frame" x="0.0" y="64" width="1024" height="660"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="Gxb-F8-2bg">
+                                <rect key="frame" x="440" y="20" width="145" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Team1"/>
+                                    <segment title="Team2"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Team1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bfj-ad-w5M">
+                                <rect key="frame" x="20" y="20" width="412" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Team1's Game Stats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="812-1E-jbb">
+                                <rect key="frame" x="306" y="112" width="412" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Team2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="beP-3Y-RqB">
+                                <rect key="frame" x="593" y="20" width="411" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="joc-yp-IeC">
+                                <rect key="frame" x="20" y="200" width="984" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="sJC-O6-Kad">
+                                    <rect key="frame" x="0.0" y="0.0" width="984" height="37"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="FGA-FGM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Pz-xg-jgV">
+                                            <rect key="frame" x="68" y="8" width="79" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="FG%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KUT-0E-ze8">
+                                            <rect key="frame" x="166" y="8" width="41" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3PM-3PA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3j0-AX-cg3">
+                                            <rect key="frame" x="227" y="8" width="76" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3P%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fXG-90-x6W">
+                                            <rect key="frame" x="325" y="8" width="38" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="FTA-FTM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NAz-W0-bZx">
+                                            <rect key="frame" x="385" y="8" width="73" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="FT%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xlN-Iz-Q72">
+                                            <rect key="frame" x="485" y="8" width="39" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="OR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LtV-Py-inV">
+                                            <rect key="frame" x="546" y="8" width="26" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="DR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IS4-DK-9d9">
+                                            <rect key="frame" x="600" y="8" width="25" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="REB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zri-PO-rWV">
+                                            <rect key="frame" x="652" y="8" width="35" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="AST" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nFd-ia-2g5">
+                                            <rect key="frame" x="712" y="8" width="34" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="STL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G5n-lx-jQb">
+                                            <rect key="frame" x="775" y="8" width="32" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="PF" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nnG-HJ-h2y">
+                                            <rect key="frame" x="831" y="8" width="22" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="TO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hei-ge-gG5">
+                                            <rect key="frame" x="879" y="8" width="24" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="PTS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aqX-Jy-f7I">
+                                            <rect key="frame" x="930" y="8" width="34" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="#" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OaR-ye-zbM">
+                                            <rect key="frame" x="20" y="8" width="24" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.87887773719999995" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="acD-lL-1MQ">
+                                        <rect key="frame" x="0.0" y="59" width="984" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="984" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Game" id="gFs-Eb-f5p"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JX1-eg-0O4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2211" y="-770"/>
+        </scene>
         <!--Edit Player View Controller-->
         <scene sceneID="NlK-yb-Aks">
             <objects>
@@ -721,6 +882,50 @@
                 <exit id="hzz-mt-vJx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1901" y="-2475"/>
+        </scene>
+        <!--Game List View Controller - Games-->
+        <scene sceneID="tHp-Nq-DQo">
+            <objects>
+                <tableViewController id="zkc-Qs-Cgp" customClass="HSGameListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ro0-7B-7mR">
+                        <rect key="frame" x="0.0" y="64" width="1024" height="660"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Game Cell" textLabel="sYc-us-1CV" style="IBUITableViewCellStyleDefault" id="CVP-XH-Ed7">
+                                <rect key="frame" x="0.0" y="22" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="1004" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Team1 vs Team 2 - 02/03/1991" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sYc-us-1CV">
+                                            <rect key="frame" x="10" y="0.0" width="984" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="qhn-ag-afo" kind="push" identifier="gameSelected" id="RoW-yD-LGq"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="zkc-Qs-Cgp" id="0e5-zF-hBV"/>
+                            <outlet property="delegate" destination="zkc-Qs-Cgp" id="FTz-g6-K2Y"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Games" id="KAo-nn-Ey9"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vE3-vn-YQZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1051" y="-784"/>
         </scene>
         <!--Game View Controller - Spurs v Timberwolves-->
         <scene sceneID="fKn-UA-Jr4">
@@ -946,11 +1151,16 @@
                         <outletCollection property="leftTeamButtons" destination="Ze9-vS-8tz" id="mGh-kR-btA"/>
                         <outletCollection property="leftTeamButtons" destination="Nc7-mx-1nj" id="eW2-Xq-8qr"/>
                         <outletCollection property="leftTeamButtons" destination="ei5-Bp-9o5" id="TM5-MX-oXh"/>
+                        <outletCollection property="rightTeamButtons" destination="UuY-Ld-4Pd" id="uet-gf-QuE"/>
+                        <outletCollection property="rightTeamButtons" destination="Skq-K0-WSm" id="Fmf-Ja-3Ul"/>
+                        <outletCollection property="rightTeamButtons" destination="Hlk-V5-CBG" id="Xk3-MT-zpT"/>
+                        <outletCollection property="rightTeamButtons" destination="IBW-Xd-OB1" id="l2o-gg-DMz"/>
+                        <outletCollection property="rightTeamButtons" destination="yhr-H4-mWt" id="2et-iU-wvZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yjk-Ni-zeR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1011" y="-73"/>
+            <point key="canvasLocation" x="1023" y="79"/>
         </scene>
         <!--Select Opposing Team View Controller-->
         <scene sceneID="oLa-nz-dCp">
@@ -1124,7 +1334,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="createGameImage.png" width="750" height="750"/>
+        <image name="gameImage.png" width="750" height="750"/>
         <image name="noImage.jpg" width="400" height="400"/>
+        <image name="playerImage.png" width="720" height="720"/>
     </resources>
     <classes>
         <class className="CoreDataTableViewController" superclassName="UITableViewController">
@@ -1155,6 +1368,9 @@
                 <relationship kind="outlet" name="teamNameTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
+        <class className="HSGameListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HSGameListViewController.h"/>
+        </class>
         <class className="HSGameViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HSGameViewController.h"/>
             <relationships>
@@ -1162,6 +1378,7 @@
                 <relationship kind="outlet" name="leftTeamLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="rightTeamLabel" candidateClass="UILabel"/>
                 <relationship kind="outletCollection" name="leftTeamButtons" candidateClass="UIButton"/>
+                <relationship kind="outletCollection" name="rightTeamButtons" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="HSPlayerProfileViewController" superclassName="UIViewController">

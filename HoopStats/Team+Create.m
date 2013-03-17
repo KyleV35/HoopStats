@@ -31,4 +31,13 @@
     return [context executeFetchRequest:request error:nil];
 }
 
+-(NSString*)description
+{
+    if ([self.location length] == 0) {
+        return [NSString stringWithFormat:@"%@",self.teamName];
+    } else {
+        return [NSString stringWithFormat:@"%@ %@",self.location,self.teamName];
+    }
+}
+
 @end
