@@ -13,5 +13,7 @@
 
 @property (strong, nonatomic) NSManagedObjectContext *moc;
 @property (strong, nonatomic) Game *game;
+@property (strong, nonatomic) Team* homeTeam;
+@property (strong, nonatomic) Team* awayTeam;
 
 @end

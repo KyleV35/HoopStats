@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="0H8-tj-fho">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="qp8-ag-84E">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - Stats-->
         <scene sceneID="plV-BG-M1s">
             <objects>
                 <navigationController definesPresentationContext="YES" id="0H8-tj-fho" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Stats" id="HFZ-Qh-3kt"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="vN7-U7-Yb0">
                         <autoresizingMask key="autoresizingMask"/>
@@ -24,16 +25,35 @@
             </objects>
             <point key="canvasLocation" x="-2534" y="-1053"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="wPd-J8-eZj">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="qp8-ag-84E" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="mBl-15-PRV">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="0H8-tj-fho" kind="relationship" relationship="viewControllers" id="yvH-st-e2E"/>
+                        <segue destination="zKL-yf-0oT" kind="relationship" relationship="viewControllers" id="jWE-eD-4qE"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Z5-LC-eCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3457" y="-764"/>
+        </scene>
         <!--All Teams View Controller - Teams-->
         <scene sceneID="N5v-Js-xWc">
             <objects>
                 <tableViewController id="SNw-Nd-dNe" customClass="HSAllTeamsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="H0t-ex-g4Y">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="655"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.88609146900000002" green="0.48039615089999999" blue="0.16773472740000001" alpha="1" colorSpace="calibratedRGB"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                        <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Team Cell" textLabel="MRQ-TO-VYr" style="IBUITableViewCellStyleDefault" id="TMA-iW-qIv">
                                 <rect key="frame" x="0.0" y="22" width="1024" height="44"/>
@@ -209,32 +229,32 @@
             <objects>
                 <viewController id="cXj-f0-lIy" customClass="HSTeamViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wec-Sd-5Pv">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="655"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" image="playerImage.png" id="5dc-qO-b5J">
-                                <rect key="frame" x="12" y="189" width="325" height="325"/>
+                                <rect key="frame" x="12" y="164" width="325" height="325"/>
                             </imageView>
                             <imageView contentMode="scaleToFill" image="gameImage.png" id="kWU-Lt-kWm">
-                                <rect key="frame" x="349" y="189" width="326" height="325"/>
+                                <rect key="frame" x="349" y="164" width="326" height="325"/>
                             </imageView>
                             <imageView contentMode="scaleToFill" image="createGameImage.png" id="g2N-PH-8Q9">
-                                <rect key="frame" x="683" y="190" width="325" height="325"/>
+                                <rect key="frame" x="683" y="165" width="325" height="325"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Players" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rbg-Hi-hN9">
-                                <rect key="frame" x="12" y="153" width="325" height="28"/>
+                                <rect key="frame" x="12" y="141" width="325" height="28"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Games" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CMz-L8-bhh">
-                                <rect key="frame" x="349" y="153" width="326" height="28"/>
+                                <rect key="frame" x="349" y="141" width="326" height="28"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="New Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ALm-Pi-7JL">
-                                <rect key="frame" x="683" y="153" width="321" height="28"/>
+                                <rect key="frame" x="683" y="141" width="321" height="28"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -250,7 +270,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="gamesImageView" destination="kWU-Lt-kWm" id="WIT-lI-COo"/>
@@ -271,7 +290,7 @@
             <objects>
                 <tableViewController id="XcW-9B-cgo" customClass="HSPlayersViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vgc-oO-HZw">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="655"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.88609146900000002" green="0.48039615089999999" blue="0.16773472740000001" alpha="1" colorSpace="calibratedRGB"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -325,44 +344,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aYK-vF-WSO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="hM7-Az-hXg" customClass="HSPlayerProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7mU-DO-ZYD">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="655"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="noImage.jpg" id="vJK-OY-BPs">
-                                <rect key="frame" x="20" y="22" width="200" height="200"/>
+                                <rect key="frame" x="20" y="19" width="200" height="200"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hXL-jt-B9X">
-                                <rect key="frame" x="228" y="21" width="57" height="30"/>
+                                <rect key="frame" x="228" y="19" width="57" height="30"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Team:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HHC-B0-3Al">
-                                <rect key="frame" x="228" y="102" width="56" height="30"/>
+                                <rect key="frame" x="228" y="95" width="56" height="30"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZWZ-Ph-FWn">
-                                <rect key="frame" x="228" y="62" width="77" height="30"/>
+                                <rect key="frame" x="228" y="57" width="77" height="30"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="First Name Last Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cdL-9z-hJx">
-                                <rect key="frame" x="292" y="28" width="712" height="21"/>
+                                <rect key="frame" x="292" y="26" width="712" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VFa-YG-Onn">
-                                <rect key="frame" x="313" y="69" width="252" height="21"/>
+                                <rect key="frame" x="313" y="64" width="252" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Team" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hgv-V1-R4O">
-                                <rect key="frame" x="292" y="110" width="712" height="21"/>
+                                <rect key="frame" x="292" y="102" width="712" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -473,13 +492,13 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Totals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XsX-Pt-kAB">
-                                <rect key="frame" x="483" y="258" width="58" height="30"/>
+                                <rect key="frame" x="483" y="239" width="58" height="30"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Averages" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Xa-ci-98F">
-                                <rect key="frame" x="470" y="437" width="85" height="30"/>
+                                <rect key="frame" x="470" y="406" width="85" height="30"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -619,7 +638,7 @@
             <objects>
                 <viewController id="qhn-ag-afo" customClass="HSReviewGameViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2lc-Iu-Htn">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="655"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Gxb-F8-2bg">
@@ -652,7 +671,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="joc-yp-IeC">
-                                <rect key="frame" x="20" y="200" width="984" height="504"/>
+                                <rect key="frame" x="20" y="200" width="984" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="sJC-O6-Kad">
@@ -751,17 +770,6 @@
                                     </subviews>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="acD-lL-1MQ">
-                                        <rect key="frame" x="0.0" y="59" width="984" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="984" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="qhn-ag-afo" id="gO8-nf-uaR"/>
                                     <outlet property="delegate" destination="qhn-ag-afo" id="8lB-pD-taB"/>
@@ -911,7 +919,7 @@
             <objects>
                 <tableViewController id="zkc-Qs-Cgp" customClass="HSGameListViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ro0-7B-7mR">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="655"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.88609146900000002" green="0.48039615089999999" blue="0.16773472740000001" alpha="1" colorSpace="calibratedRGB"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -957,13 +965,13 @@
             <objects>
                 <viewController id="Wz9-X9-3ZU" customClass="HSGameViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1V8-ow-O1h">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="655"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="R81-8s-fu8">
-                                <rect key="frame" x="20" y="420" width="98" height="44"/>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="R81-8s-fu8">
+                                <rect key="frame" x="20" y="233" width="160" height="75"/>
                                 <color key="backgroundColor" red="0.88609146900000002" green="0.48039615089999999" blue="0.16773472740000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <state key="normal" title="35">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -975,10 +983,10 @@
                                     <action selector="playerButtonPushed:" destination="Wz9-X9-3ZU" eventType="touchUpInside" id="N89-pP-LGe"/>
                                 </connections>
                             </button>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BqF-RF-Gku">
-                                <rect key="frame" x="20" y="474" width="98" height="44"/>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="BqF-RF-Gku">
+                                <rect key="frame" x="20" y="315" width="160" height="75"/>
                                 <color key="backgroundColor" red="0.88609146900000002" green="0.48039615089999999" blue="0.16773472740000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <state key="normal" title="42">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -990,10 +998,10 @@
                                     <action selector="playerButtonPushed:" destination="Wz9-X9-3ZU" eventType="touchUpInside" id="PAl-jg-nqz"/>
                                 </connections>
                             </button>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ze9-vS-8tz">
-                                <rect key="frame" x="20" y="529" width="98" height="44"/>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="Ze9-vS-8tz">
+                                <rect key="frame" x="20" y="397" width="160" height="75"/>
                                 <color key="backgroundColor" red="0.88609146900000002" green="0.48039615089999999" blue="0.16773472740000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <state key="normal" title="23">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1005,10 +1013,10 @@
                                     <action selector="playerButtonPushed:" destination="Wz9-X9-3ZU" eventType="touchUpInside" id="5bp-ck-NUC"/>
                                 </connections>
                             </button>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Nc7-mx-1nj">
-                                <rect key="frame" x="20" y="584" width="98" height="44"/>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="Nc7-mx-1nj">
+                                <rect key="frame" x="20" y="479" width="160" height="75"/>
                                 <color key="backgroundColor" red="0.88609146900000002" green="0.48039615089999999" blue="0.16773472740000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <state key="normal" title="11">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1020,10 +1028,10 @@
                                     <action selector="playerButtonPushed:" destination="Wz9-X9-3ZU" eventType="touchUpInside" id="qz3-KI-Mko"/>
                                 </connections>
                             </button>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ei5-Bp-9o5">
-                                <rect key="frame" x="20" y="638" width="98" height="44"/>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="ei5-Bp-9o5">
+                                <rect key="frame" x="20" y="561" width="160" height="75"/>
                                 <color key="backgroundColor" red="0.88609146900000002" green="0.48039615089999999" blue="0.16773472740000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <state key="normal" title="1">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1035,10 +1043,10 @@
                                     <action selector="playerButtonPushed:" destination="Wz9-X9-3ZU" eventType="touchUpInside" id="UPh-sJ-mBB"/>
                                 </connections>
                             </button>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UuY-Ld-4Pd">
-                                <rect key="frame" x="906" y="420" width="98" height="44"/>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="UuY-Ld-4Pd">
+                                <rect key="frame" x="844" y="233" width="160" height="75"/>
                                 <color key="backgroundColor" red="0.88609146900000002" green="0.48039615089999999" blue="0.16773472740000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <state key="normal" title="9">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1050,10 +1058,10 @@
                                     <action selector="playerButtonPushed:" destination="Wz9-X9-3ZU" eventType="touchUpInside" id="aYg-9r-gFC"/>
                                 </connections>
                             </button>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Skq-K0-WSm">
-                                <rect key="frame" x="906" y="474" width="98" height="44"/>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="Skq-K0-WSm">
+                                <rect key="frame" x="844" y="315" width="160" height="75"/>
                                 <color key="backgroundColor" red="0.88609146900000002" green="0.48039615089999999" blue="0.16773472740000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <state key="normal" title="33">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1065,10 +1073,10 @@
                                     <action selector="playerButtonPushed:" destination="Wz9-X9-3ZU" eventType="touchUpInside" id="Ip6-he-VhE"/>
                                 </connections>
                             </button>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Hlk-V5-CBG">
-                                <rect key="frame" x="906" y="529" width="98" height="44"/>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="Hlk-V5-CBG">
+                                <rect key="frame" x="844" y="397" width="160" height="75"/>
                                 <color key="backgroundColor" red="0.88609146900000002" green="0.48039615089999999" blue="0.16773472740000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <state key="normal" title="45">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1080,10 +1088,10 @@
                                     <action selector="playerButtonPushed:" destination="Wz9-X9-3ZU" eventType="touchUpInside" id="8cG-sB-Ka2"/>
                                 </connections>
                             </button>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IBW-Xd-OB1">
-                                <rect key="frame" x="906" y="584" width="98" height="44"/>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="IBW-Xd-OB1">
+                                <rect key="frame" x="844" y="479" width="160" height="75"/>
                                 <color key="backgroundColor" red="0.88609146900000002" green="0.48039615089999999" blue="0.16773472740000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <state key="normal" title="32">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1095,10 +1103,10 @@
                                     <action selector="playerButtonPushed:" destination="Wz9-X9-3ZU" eventType="touchUpInside" id="dW2-u2-8qp"/>
                                 </connections>
                             </button>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yhr-H4-mWt">
-                                <rect key="frame" x="906" y="638" width="98" height="44"/>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="yhr-H4-mWt">
+                                <rect key="frame" x="844" y="561" width="160" height="75"/>
                                 <color key="backgroundColor" red="0.88609146900000002" green="0.48039615089999999" blue="0.16773472740000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <state key="normal" title="5">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1111,60 +1119,36 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Spurs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o9E-a9-XRD">
-                                <rect key="frame" x="20" y="21" width="317" height="50"/>
+                                <rect key="frame" x="20" y="20" width="449" height="50"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Timberwolves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vF7-FL-aGq">
-                                <rect key="frame" x="687" y="21" width="317" height="50"/>
+                                <rect key="frame" x="477" y="19" width="527" height="50"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" sectionIndexMinimumDisplayRowCount="3" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="EhB-FR-7E3">
-                                <rect key="frame" x="345" y="21" width="334" height="154"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Recent Highlight Cell" textLabel="nBr-UH-cC2" style="IBUITableViewCellStyleDefault" id="EUe-aj-EWX">
-                                        <rect key="frame" x="0.0" y="22" width="334" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="334" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Recent Highlight- Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nBr-UH-cC2">
-                                                    <rect key="frame" x="10" y="0.0" width="314" height="43"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="Wz9-X9-3ZU" id="3XW-3S-6Vf"/>
-                                    <outlet property="delegate" destination="Wz9-X9-3ZU" id="dqF-jf-BiE"/>
-                                </connections>
-                            </tableView>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aHS-fH-eD5">
-                                <rect key="frame" x="345" y="195" width="183" height="44"/>
-                                <color key="backgroundColor" red="0.88609146900000002" green="0.48039615089999999" blue="0.16773472740000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kIC-Hp-sZd">
+                                <rect key="frame" x="20" y="80" width="449" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="60"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YGP-7j-knM">
+                                <rect key="frame" x="477" y="79" width="527" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="60"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PIx-Qt-f3x">
+                                <rect key="frame" x="844" y="182" width="160" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="View Highlight History">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3DX-rG-h19">
-                                <rect key="frame" x="536" y="195" width="143" height="44"/>
-                                <color key="backgroundColor" red="0.88609146900000002" green="0.48039615089999999" blue="0.16773472740000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Undo Last Event">
+                                <state key="normal" title="Make Substitution">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1172,47 +1156,131 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kIC-Hp-sZd">
-                                <rect key="frame" x="20" y="79" width="317" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="60"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YGP-7j-knM">
-                                <rect key="frame" x="687" y="79" width="317" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="60"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.88609146900000002" green="0.48039615089999999" blue="0.16773472740000001" alpha="1" colorSpace="calibratedRGB"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Spurs v Timberwolves" id="PS3-Ng-ccd"/>
+                    <navigationItem key="navigationItem" title="Spurs v Timberwolves" id="PS3-Ng-ccd">
+                        <barButtonItem key="rightBarButtonItem" title="Game Overview" id="80F-Uf-Gvs">
+                            <connections>
+                                <action selector="gameOverviewButtonPressed:" destination="Wz9-X9-3ZU" id="0uq-F3-abE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="RecentHighlightsTableView" destination="EhB-FR-7E3" id="Y9h-lT-hjY"/>
-                        <outlet property="leftTeamLabel" destination="o9E-a9-XRD" id="9W9-YX-6Ri"/>
-                        <outlet property="leftTeamScoreLabel" destination="kIC-Hp-sZd" id="BO4-Dt-b8m"/>
-                        <outlet property="rightTeamLabel" destination="vF7-FL-aGq" id="kG8-yD-pql"/>
-                        <outlet property="rightTeamScoreLabel" destination="YGP-7j-knM" id="dI0-hN-Uj2"/>
-                        <outletCollection property="leftTeamButtons" destination="R81-8s-fu8" id="SND-dk-Wle"/>
-                        <outletCollection property="leftTeamButtons" destination="BqF-RF-Gku" id="TNe-Pw-gT6"/>
-                        <outletCollection property="leftTeamButtons" destination="Ze9-vS-8tz" id="mGh-kR-btA"/>
-                        <outletCollection property="leftTeamButtons" destination="Nc7-mx-1nj" id="eW2-Xq-8qr"/>
-                        <outletCollection property="leftTeamButtons" destination="ei5-Bp-9o5" id="TM5-MX-oXh"/>
-                        <outletCollection property="rightTeamButtons" destination="UuY-Ld-4Pd" id="uet-gf-QuE"/>
-                        <outletCollection property="rightTeamButtons" destination="Skq-K0-WSm" id="Fmf-Ja-3Ul"/>
-                        <outletCollection property="rightTeamButtons" destination="Hlk-V5-CBG" id="Xk3-MT-zpT"/>
-                        <outletCollection property="rightTeamButtons" destination="IBW-Xd-OB1" id="l2o-gg-DMz"/>
-                        <outletCollection property="rightTeamButtons" destination="yhr-H4-mWt" id="2et-iU-wvZ"/>
+                        <outlet property="awayTeamButton1" destination="UuY-Ld-4Pd" id="rdC-R4-USB"/>
+                        <outlet property="awayTeamButton2" destination="Skq-K0-WSm" id="ynB-uy-MrQ"/>
+                        <outlet property="awayTeamButton3" destination="Hlk-V5-CBG" id="bxr-bh-Nyh"/>
+                        <outlet property="awayTeamButton4" destination="IBW-Xd-OB1" id="TJ9-o7-fcc"/>
+                        <outlet property="awayTeamButton5" destination="yhr-H4-mWt" id="GIt-s0-5R2"/>
+                        <outlet property="awayTeamLabel" destination="vF7-FL-aGq" id="Sup-qe-TcZ"/>
+                        <outlet property="awayTeamScoreLabel" destination="YGP-7j-knM" id="kPX-HO-B1y"/>
+                        <outlet property="homeTeamButton1" destination="R81-8s-fu8" id="hzD-Qd-4cY"/>
+                        <outlet property="homeTeamButton2" destination="BqF-RF-Gku" id="2gx-w4-4p9"/>
+                        <outlet property="homeTeamButton3" destination="Ze9-vS-8tz" id="kfa-eS-zSR"/>
+                        <outlet property="homeTeamButton4" destination="Nc7-mx-1nj" id="NUw-sZ-wKe"/>
+                        <outlet property="homeTeamButton5" destination="ei5-Bp-9o5" id="NeR-xN-XTb"/>
+                        <outlet property="homeTeamLabel" destination="o9E-a9-XRD" id="Ae5-iY-piu"/>
+                        <outlet property="homeTeamScoreLabel" destination="kIC-Hp-sZd" id="wcR-hL-I2P"/>
+                        <outletCollection property="homeTeamButtons" destination="R81-8s-fu8" id="77y-dM-qkd"/>
+                        <outletCollection property="homeTeamButtons" destination="BqF-RF-Gku" id="Xxl-7L-SMx"/>
+                        <outletCollection property="homeTeamButtons" destination="Ze9-vS-8tz" id="WHL-he-Ve4"/>
+                        <outletCollection property="homeTeamButtons" destination="Nc7-mx-1nj" id="uht-Ta-YiW"/>
+                        <outletCollection property="homeTeamButtons" destination="ei5-Bp-9o5" id="l0m-jj-8T3"/>
+                        <outletCollection property="awayTeamButtons" destination="UuY-Ld-4Pd" id="EOd-wh-J6G"/>
+                        <outletCollection property="awayTeamButtons" destination="Skq-K0-WSm" id="JZb-fw-ORR"/>
+                        <outletCollection property="awayTeamButtons" destination="Hlk-V5-CBG" id="Wcz-xo-oWh"/>
+                        <outletCollection property="awayTeamButtons" destination="IBW-Xd-OB1" id="iQs-us-JMf"/>
+                        <outletCollection property="awayTeamButtons" destination="yhr-H4-mWt" id="2qm-5v-5nz"/>
+                        <segue destination="qhn-ag-afo" kind="push" identifier="gameOverviewSegue" id="Ohs-ro-3Ha"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yjk-Ni-zeR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1023" y="79"/>
+        </scene>
+        <!--Navigation Controller - Rules-->
+        <scene sceneID="eYb-JE-2Ml">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="zKL-yf-0oT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Rules" id="CXl-Tv-p3L"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="V7V-VU-dzD">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Rm6-up-j4V" kind="relationship" relationship="rootViewController" id="tc5-DZ-ksE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uEg-So-AKm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2534" y="-180"/>
+        </scene>
+        <!--Rules View Controller - Rules-->
+        <scene sceneID="ZEn-AZ-zVL">
+            <objects>
+                <viewController id="Rm6-up-j4V" customClass="HSRulesViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e1s-HT-xue">
+                        <rect key="frame" x="0.0" y="64" width="1024" height="655"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="L8X-0h-75m">
+                                <rect key="frame" x="309" y="20" width="435" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Foul">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="foulPressed" destination="Rm6-up-j4V" eventType="touchUpInside" id="xjk-4P-kSh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="h5b-YH-Jas">
+                                <rect key="frame" x="304" y="238" width="435" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Travel">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="travelPressed" destination="Rm6-up-j4V" eventType="touchUpInside" id="ips-co-PeS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CYl-pB-I5T">
+                                <rect key="frame" x="309" y="456" width="435" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Carry">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="carryPressed:" destination="Rm6-up-j4V" eventType="touchUpInside" id="vO6-Y2-Qj0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.57385085589999996" blue="0.16556546589999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Rules" id="Wzy-xf-t1L"/>
+                    <navigationItem key="navigationItem" title="Rules" id="b3E-YH-GfC"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MSh-D6-LKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1410" y="-180"/>
         </scene>
         <!--Select Opposing Team View Controller-->
         <scene sceneID="oLa-nz-dCp">
@@ -1426,12 +1494,22 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HSGameViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="RecentHighlightsTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="leftTeamLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="leftTeamScoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rightTeamLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rightTeamScoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outletCollection" name="leftTeamButtons" candidateClass="UIButton"/>
-                <relationship kind="outletCollection" name="rightTeamButtons" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="awayTeamButton1" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="awayTeamButton2" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="awayTeamButton3" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="awayTeamButton4" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="awayTeamButton5" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="awayTeamLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="awayTeamScoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="homeTeamButton1" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="homeTeamButton2" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="homeTeamButton3" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="homeTeamButton4" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="homeTeamButton5" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="homeTeamLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="homeTeamScoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outletCollection" name="awayTeamButtons" candidateClass="UIButton"/>
+                <relationship kind="outletCollection" name="homeTeamButtons" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="HSPlayerProfileViewController" superclassName="UIViewController">
@@ -1460,6 +1538,12 @@
                 <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
+        <class className="HSRulesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HSRulesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="carryPressed:"/>
+            </relationships>
+        </class>
         <class className="HSSelectOpposingTeamViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HSSelectOpposingTeamViewController.h"/>
             <relationships>
@@ -1469,6 +1553,9 @@
         <class className="HSTeamViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HSTeamViewController.h"/>
             <relationships>
+                <relationship kind="action" name="editAccepted:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="editCancelled:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="opposingTeamSelected:" candidateClass="UIStoryboardSegue"/>
                 <relationship kind="outlet" name="gamesImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="makeGameImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="playersImageView" candidateClass="UIImageView"/>
@@ -1477,10 +1564,16 @@
         <class className="UIRefreshControl" superclassName="UIControl">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>
         </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
+        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ohs-ro-3Ha"/>
+    </inferredMetricsTieBreakers>
 </document>

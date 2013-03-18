@@ -12,5 +12,6 @@
 @interface HSSelectOpposingTeamViewController : UIViewController
 
 @property (strong, nonatomic ,readonly) Team *selectedTeam;
+@property (strong, nonatomic) Team *originalTeam;
 
 @end

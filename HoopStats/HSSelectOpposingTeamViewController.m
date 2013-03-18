@@ -27,7 +27,9 @@
 
 -(void)setAllTeamsArray:(NSArray *)allTeamsArray
 {
-    _allTeamsArray = allTeamsArray;
+    NSMutableArray *array = [allTeamsArray mutableCopy];
+    [array removeObject:self.originalTeam];
+    _allTeamsArray = [NSArray arrayWithArray:array]; //Remove current team
     [self.tableView reloadData];
 }
 
@@ -69,7 +71,6 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSLog(segue.identifier);
     if ([sender isKindOfClass:[UITableViewCell class]]) {
         UITableViewCell *cell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];

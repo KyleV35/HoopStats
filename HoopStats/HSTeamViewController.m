@@ -13,6 +13,7 @@
 #import "HSPlayersViewController.h"
 #import "HSGameListViewController.h"
 #import "Game+Create.h"
+#import "HSSelectOpposingTeamViewController.h"
 
 #define SHOW_PLAYERS_SEGUE @"showPlayers"
 #define CREATE_NEW_GAME_SEGUE @"createNewGame"
@@ -69,6 +70,8 @@
         HSGameViewController *gameController = segue.destinationViewController;
         Game *game = [Game gameWithTeam:self.team againstOpponent:self.opposingTeam inManagedObjectContext:self.moc];
         gameController.game = game;
+        gameController.homeTeam = self.team;
+        gameController.awayTeam = self.opposingTeam;
         gameController.moc = self.moc;
     } else if ([segue.identifier isEqualToString:EDIT_TEAM_SEGUE]) {
         HSEditTeamViewController *editTeamController = segue.destinationViewController;
@@ -79,6 +82,9 @@
     } else if ([segue.identifier isEqualToString:SHOW_GAMES_SEGUE]) {
         HSGameListViewController *gameListController = segue.destinationViewController;
         gameListController.team = self.team;
+    } else if ([segue.identifier isEqualToString:SELECT_OPPOSING_TEAM_SEGUE]) {
+        HSSelectOpposingTeamViewController *opposingTeamController = segue.destinationViewController;
+        opposingTeamController.originalTeam = self.team;
     }
 }
 

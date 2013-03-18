@@ -71,6 +71,7 @@
 		9AFF1DC516F546AC004F2675 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF1DC416F546AC004F2675 /* Team.m */; };
 		9AFF1DC816F546AC004F2675 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF1DC716F546AC004F2675 /* Game.m */; };
 		9AFF1DCB16F58C13004F2675 /* HSReviewGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF1DCA16F58C13004F2675 /* HSReviewGameViewController.m */; };
+		9AFF1DCE16F6BB6C004F2675 /* HSRulesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF1DCD16F6BB6B004F2675 /* HSRulesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +173,8 @@
 		9AFF1DC716F546AC004F2675 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		9AFF1DC916F58C12004F2675 /* HSReviewGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSReviewGameViewController.h; sourceTree = "<group>"; };
 		9AFF1DCA16F58C13004F2675 /* HSReviewGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSReviewGameViewController.m; sourceTree = "<group>"; };
+		9AFF1DCC16F6BB6A004F2675 /* HSRulesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSRulesViewController.h; sourceTree = "<group>"; };
+		9AFF1DCD16F6BB6B004F2675 /* HSRulesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSRulesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +261,8 @@
 				9A20981F16F3A18600B9447D /* HSPlayerProfileViewController.m */,
 				9AFF1DC916F58C12004F2675 /* HSReviewGameViewController.h */,
 				9AFF1DCA16F58C13004F2675 /* HSReviewGameViewController.m */,
+				9AFF1DCC16F6BB6A004F2675 /* HSRulesViewController.h */,
+				9AFF1DCD16F6BB6B004F2675 /* HSRulesViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -540,6 +545,7 @@
 				9AFF1DC516F546AC004F2675 /* Team.m in Sources */,
 				9AFF1DC816F546AC004F2675 /* Game.m in Sources */,
 				9AFF1DCB16F58C13004F2675 /* HSReviewGameViewController.m in Sources */,
+				9AFF1DCE16F6BB6C004F2675 /* HSRulesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

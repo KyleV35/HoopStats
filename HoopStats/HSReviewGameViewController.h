@@ -12,5 +12,7 @@
 @interface HSReviewGameViewController : UIViewController
 
 @property (weak, nonatomic) Game *game;
+@property (weak, nonatomic) Team *homeTeam;
+@property (weak, nonatomic) Team *awayTeam;
 
 @end

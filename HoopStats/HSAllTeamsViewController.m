@@ -64,7 +64,7 @@
 }
 
 - (IBAction)addButtonPressed:(UIBarButtonItem *)sender {
-    Team* team = [Team teamWithName:@"New Team" location:@"" inManagedObjectContext:self.moc];
+    [Team teamWithName:@"New Team" location:@"" inManagedObjectContext:self.moc];
     [self.moc save:nil];
 }
 
