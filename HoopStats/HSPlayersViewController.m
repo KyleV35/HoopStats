@@ -10,6 +10,7 @@
 #import "HSEditPlayerViewController.h"
 #import "HSPlayerProfileViewController.h"
 #import "HSDatabase.h"
+#import "HSPlayerCell.h"
 #import "Player+Create.h"
 
 @interface HSPlayersViewController ()
@@ -19,6 +20,10 @@
 
 @end
 
+#define PLAYER_CELL_NIB @"HSPlayerCell"
+#define PLAYER_CELL_REUSE_IDENTIFIER @"PlayerCell"
+#define PLAYER_CELL_SEGUE @"playerSelected"
+
 @implementation HSPlayersViewController
 
 -(void)viewDidLoad
@@ -27,12 +32,22 @@
     [[HSDatabase sharedInstance] performWithDocument:^(UIManagedDocument *document) {
         self.moc = document.managedObjectContext;
     }];
+    [self.tableView registerNib:[UINib nibWithNibName:PLAYER_CELL_NIB bundle:nil] forCellReuseIdentifier:PLAYER_CELL_REUSE_IDENTIFIER];
 }
 
 -(void)setTeam:(Team *)team
 {
     _team = team;
-    self.playersArray = [team.players allObjects];
+    // Sort players by number
+    self.playersArray = [[team.players allObjects] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        Player *player1 = (Player*)obj1;
+        Player *player2 = (Player*)obj2;
+        if (player1.jerseyNumber.intValue < player2.jerseyNumber.intValue) {
+            return NSOrderedAscending;
+        } else if (player1.jerseyNumber.intValue == player2.jerseyNumber.intValue) {
+            return NSOrderedSame;
+        } else return NSOrderedDescending;
+    }];
 }
 
 #pragma mark - Table view data source
@@ -45,10 +60,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Player Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = PLAYER_CELL_REUSE_IDENTIFIER;
+    HSPlayerCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     Player *player = [self.playersArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = [player description];
+    if (cell) {
+        cell.numberLabel.text = player.jerseyNumber.stringValue;
+        cell.nameLabel.text = player.fullName;
+    }
     
     return cell;
 }
@@ -76,6 +94,11 @@
     self.playersArray = [self.team.players allObjects];
     [self.tableView reloadData];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:PLAYER_CELL_SEGUE sender:[tableView cellForRowAtIndexPath:indexPath]];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

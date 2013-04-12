@@ -9,9 +9,9 @@
 #import "HSGameListViewController.h"
 #import "Game+Create.h"
 #import "HSReviewGameViewController.h"
+#import "HSGameCell.h"
 
 #define GAME_SELECTED_SEGUE @"gameSelected"
-#define GAME_CELL @"Game Cell"
 
 @interface HSGameListViewController ()
 
@@ -24,19 +24,20 @@
 -(void)setTeam:(Team *)team
 {
     _team = team;
-    self.gamesArray = [team.games allObjects];
+    // Sort games array by date
+    self.gamesArray = [[team.games allObjects] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        Game *game1 = (Game*)obj1;
+        Game *game2 = (Game*)obj2;
+        // Hack to allow earlier games to be displayed first
+        // NSComparisonResults are enums from -1 to 1.
+        return [game1.date compare:game2.date]*-1;
+    }];
 }
 
-- (void)viewDidLoad
+-(void)viewDidLoad
 {
     [super viewDidLoad];
-
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.tableView registerNib:[UINib nibWithNibName:GAME_CELL_NIB bundle:nil] forCellReuseIdentifier:GAME_CELL_IDENTIFIER];
 }
 
 #pragma mark - Table view data source
@@ -55,11 +56,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = GAME_CELL;
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = GAME_CELL_IDENTIFIER;
+    HSGameCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     Game *game = [self.gamesArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = [game description];
-    
+    if (cell) {
+        NSArray *teams = [game.teams allObjects];
+        Team *firstTeam = teams[0];
+        Team *secondTeam = teams[1];
+        cell.homeTeamLabel.text = [firstTeam description];
+        cell.awayTeamLabel.text = [secondTeam description];
+        cell.timeLabel.text = [game.date description];
+    }
     return cell;
 }
 
@@ -79,13 +86,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    [self performSegueWithIdentifier:GAME_SELECTED_SEGUE sender:[tableView cellForRowAtIndexPath:indexPath]];
 }
 
 @end

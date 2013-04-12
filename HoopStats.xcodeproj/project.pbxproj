@@ -32,6 +32,10 @@
 		9A70895016EFEE85004D3E62 /* gameImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A70894E16EFEE85004D3E62 /* gameImage.png */; };
 		9A70895216EFEFA2004D3E62 /* createGameImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A70895116EFEFA2004D3E62 /* createGameImage.png */; };
 		9A70895316EFEFA2004D3E62 /* createGameImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A70895116EFEFA2004D3E62 /* createGameImage.png */; };
+		9A9041601704C243002E59C0 /* HSPlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A90415F1704C243002E59C0 /* HSPlayerCell.xib */; };
+		9A9041631704C45B002E59C0 /* HSPlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9041621704C45B002E59C0 /* HSPlayerCell.m */; };
+		9A9041651704D0A3002E59C0 /* HSGameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9041641704D0A3002E59C0 /* HSGameCell.xib */; };
+		9A9041681704D26C002E59C0 /* HSGameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9041671704D26C002E59C0 /* HSGameCell.m */; };
 		9AC3AD0516E892A000F148CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC3AD0416E892A000F148CF /* UIKit.framework */; };
 		9AC3AD0716E892A000F148CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC3AD0616E892A000F148CF /* Foundation.framework */; };
 		9AC3AD0916E892A000F148CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC3AD0816E892A000F148CF /* CoreGraphics.framework */; };
@@ -118,6 +122,12 @@
 		9A70894B16EFC844004D3E62 /* playerImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerImage.png; sourceTree = "<group>"; };
 		9A70894E16EFEE85004D3E62 /* gameImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameImage.png; sourceTree = "<group>"; };
 		9A70895116EFEFA2004D3E62 /* createGameImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = createGameImage.png; sourceTree = "<group>"; };
+		9A90415F1704C243002E59C0 /* HSPlayerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HSPlayerCell.xib; sourceTree = "<group>"; };
+		9A9041611704C45B002E59C0 /* HSPlayerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSPlayerCell.h; sourceTree = "<group>"; };
+		9A9041621704C45B002E59C0 /* HSPlayerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSPlayerCell.m; sourceTree = "<group>"; };
+		9A9041641704D0A3002E59C0 /* HSGameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HSGameCell.xib; sourceTree = "<group>"; };
+		9A9041661704D26C002E59C0 /* HSGameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSGameCell.h; sourceTree = "<group>"; };
+		9A9041671704D26C002E59C0 /* HSGameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSGameCell.m; sourceTree = "<group>"; };
 		9AC3AD0016E892A000F148CF /* HoopStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoopStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC3AD0416E892A000F148CF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9AC3AD0616E892A000F148CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -230,6 +240,12 @@
 				9AFF1D8B16F430D1004F2675 /* HSStatLineCell.xib */,
 				9AFF1D8D16F43414004F2675 /* HSStatLineCell.h */,
 				9AFF1D8E16F43414004F2675 /* HSStatLineCell.m */,
+				9A90415F1704C243002E59C0 /* HSPlayerCell.xib */,
+				9A9041611704C45B002E59C0 /* HSPlayerCell.h */,
+				9A9041621704C45B002E59C0 /* HSPlayerCell.m */,
+				9A9041641704D0A3002E59C0 /* HSGameCell.xib */,
+				9A9041661704D26C002E59C0 /* HSGameCell.h */,
+				9A9041671704D26C002E59C0 /* HSGameCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -481,6 +497,8 @@
 				9A20981116F1CDB600B9447D /* README.txt in Resources */,
 				9A20983516F3E92000B9447D /* noImage.jpg in Resources */,
 				9AFF1D8C16F430D1004F2675 /* HSStatLineCell.xib in Resources */,
+				9A9041601704C243002E59C0 /* HSPlayerCell.xib in Resources */,
+				9A9041651704D0A3002E59C0 /* HSGameCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +564,8 @@
 				9AFF1DC816F546AC004F2675 /* Game.m in Sources */,
 				9AFF1DCB16F58C13004F2675 /* HSReviewGameViewController.m in Sources */,
 				9AFF1DCE16F6BB6C004F2675 /* HSRulesViewController.m in Sources */,
+				9A9041631704C45B002E59C0 /* HSPlayerCell.m in Sources */,
+				9A9041681704D26C002E59C0 /* HSGameCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

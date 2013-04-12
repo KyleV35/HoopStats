@@ -10,6 +10,8 @@
 
 @interface Player (Create)
 
+@property (nonatomic, readonly, getter = fullName) NSString* fullName;
+
 +(Player*)playerWithFirstName:(NSString*)firstName lastName:(NSString*)lastName number:(NSNumber*)number inManagedObjectContext:(NSManagedObjectContext*)context;
 
 @end
